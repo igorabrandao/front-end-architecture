@@ -1,0 +1,45 @@
+<app-card [title]="'Right Nav Wizard'">
+  <wizard #wizard class="arc-wizard" navBarLayout="large-empty-symbols" navBarLocation="left">
+    <wizard-step stepTitle="Profile" navigationSymbol="1">
+      <div class="centered-content">
+        <div>
+          <h3>Content: Profile</h3>
+          <p>right nav</p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+
+        <div class="btn-group mt-10">
+          <button type="button" class="btn btn-primary btn-sm" nextStep>Continue</button>
+        </div>
+      </div>
+    </wizard-step>
+    <wizard-step stepTitle="Address" navigationSymbol="2">
+      <div class="centered-content">
+        <div>
+          <h3>Content: Address</h3>
+          <p>right nav</p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+
+        <div class="btn-group mt-10">
+          <button type="button" class="btn btn-secondary btn-sm" previousStep>Back</button>
+          <button type="button" class="btn btn-primary btn-sm" nextStep>Continue</button>
+        </div>
+      </div>
+    </wizard-step>
+    <wizard-step stepTitle="Finished" navigationSymbol="3">
+      <div class="centered-content">
+        <div>
+          <h3>Content: Thank's</h3>
+          <p>right nav</p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+
+        <div class="btn-group mt-10">
+          <button type="button" class="btn btn-secondary btn-sm" previousStep>Back</button>
+          <button type="button" class="btn btn-danger btn-sm" resetWizard>Reset</button>
+        </div>
+      </div>
+    </wizard-step>
+  </wizard>
+</app-card>

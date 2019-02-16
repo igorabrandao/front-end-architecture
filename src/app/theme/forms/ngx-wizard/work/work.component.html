@@ -1,0 +1,38 @@
+<!-- Work Tab Form Starts -->
+<form #workForm="ngForm" class="editForm" novalidate>
+    <div >
+        <div class="tab-pane active">
+            <h4 class="head text-center">{{title}}</h4>
+            <br/>
+            <div class='row'>
+                <div class='col-offset-4 col-10 col-sm-offset-5 col-sm-4'>
+                  <div class="form-group form-radio">
+                    <div class="radio radiofill radio-success radio-inline">
+                      <label>
+                        <input type="radio" #work="ngModel" required name="work" checked="checked" [(ngModel)]="workType" value="Design">
+                        <i class="helper"></i>Design
+                      </label>
+                    </div>
+                    <div class="radio radiofill radio-info radio-inline">
+                      <label>
+                        <input type="radio" #work="ngModel" required name="work" checked="checked" [(ngModel)]="workType" value="Code">
+                        <i class="helper"></i>Code
+                      </label>
+                    </div>
+                    <div class="radio radiofill radio-warning radio-inline">
+                      <label>
+                        <input type="radio" #work="ngModel" required name="work" checked="checked" [(ngModel)]="workType" value="Deploy">
+                        <i class="helper"></i>Deploy
+                      </label>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="form-group text-center space-20">
+                <button uiSref="personal" type="button" class="btn btn-raised btn-secondary" (click)="cancel()"> <span style="margin-right:10px;"><i class="feather icon-chevron-left"></i></span> Previous</button>
+                <button uiSref="address" type="button" class="btn btn-raised btn-info" [disabled]="!workForm.valid" (click)="save(workForm)"> Next <span style="margin-left:10px;"><i class="feather icon-chevron-right"></i></span></button>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Work Tab Form Ends -->

@@ -1,0 +1,72 @@
+<div class="page-body">
+  <div class="row">
+    <div class="col-sm-6">
+      <app-card [title]="'Basic Slider'">
+        <div class="ag-slider">
+          <nouislider [min]="someMin" [max]="someMax" [step]="someStep" [(ngModel)]="someValue" (ngModelChange)="onChange($event)"></nouislider>
+          <span class="sub-title">Value: <code> {{ someValue | json }} </code></span>
+        </div>
+      </app-card>
+    </div>
+    <div class="col-sm-6">
+      <app-card [title]="'Slider with From'">
+        <form [formGroup]="form1" class="ag-slider">
+          <nouislider [min]="0" [max]="20" [step]="0.5" [formControl]="form1.controls.single"></nouislider>
+        </form>
+        <span class="sub-title">Value by Form: <code> {{ form1.value | json }} </code></span>
+      </app-card>
+    </div>
+    <div class="col-sm-6">
+      <app-card [title]="'Basic Range Slider'">
+        <div class="ag-slider">
+          <nouislider [connect]="true" [min]="0" [max]="15" [step]="1" [(ngModel)]="someRange" (ngModelChange)="onChange($event)"></nouislider>
+        </div>
+        <span class="sub-title">Range: <code> {{ someRange | json }} </code></span>
+      </app-card>
+    </div>
+    <div class="col-sm-6">
+      <app-card [title]="'Range with From'">
+        <form [formGroup]="form2" class="ag-slider">
+          <nouislider [connect]="true" [min]="0" [max]="10" [step]="1" [formControl]="form2.controls.range"></nouislider>
+        </form>
+        <span class="sub-title">Range by Form: <code> {{ form2.value | json }} </code></span>
+      </app-card>
+    </div>
+    <div class="col-sm-6">
+      <app-card [title]="'Range with Config'">
+        <div class="ag-slider">
+          <nouislider [config]="someRange2config" [limit]="10" [(ngModel)]="someRange2" style="margin-bottom: 5rem"></nouislider>
+        </div>
+        <span class="sub-title">Range: <code> {{ someRange2 | json }} </code></span>
+      </app-card>
+    </div>
+    <div class="col-sm-6">
+      <app-card [title]="'Range with Keyboard Event'">
+        <div class="ag-slider">
+          <nouislider [config]="someKeyboardConfig" [(ngModel)]="someKeyboard" (keyup)="blinkKeyupLabel()" (keydown)="blinkKeydownLabel()" style="margin-bottom: 5rem"></nouislider>
+        </div>
+        <span class="sub-title">Range: <code> {{ someKeyboard | json }} </code></span>
+      </app-card>
+    </div>
+    <div class="col-sm-6">
+      <app-card [title]="'Slider with Tooltip'">
+        <div class="ag-slider">
+          <nouislider [min]="0" [max]="10" [step]="0.05" [(ngModel)]="someRange3" [tooltips]="[ true, true ]" style="margin-top: 4em;"></nouislider>
+        </div>
+        <span class="sub-title">Range: <code> {{ someRange3 | json }} </code></span>
+      </app-card>
+    </div>
+    <div class="col-sm-6">
+      <app-card [title]="'Slider Disabled'">
+        <form [formGroup]="form3" class="ag-slider">
+          <nouislider [min]="0" [max]="10" [step]="1" [formControl]="form3.controls.single"></nouislider>
+        </form>
+        <div class="btn-group">
+          <button type="button" class="btn" [ngClass]="form3.controls.single.disabled ? 'btn-success': 'btn-danger'" (click)="toggleDisabled()">
+            {{form3.controls.single.disabled ? 'Enable': 'Disable'}}
+          </button>
+        </div>
+      </app-card>
+    </div>
+  </div>
+</div>

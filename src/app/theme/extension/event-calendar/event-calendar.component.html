@@ -1,0 +1,66 @@
+<div class="page-body">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="calendar-header">
+        <app-card [title]="'Drag and drop your event'">
+          <div class="white-box cal-event">
+            <div class="m-t-20 skin skin-square">
+              <div class="calendar-event" *ngFor="let event of externalEvents; let index = index;" mwlDraggable [dropData]="{event: event}">
+                <span>{{ event.title }}</span> <a href="javascript:" class="remove-calendar-event" (click)="externalEvents.splice(index, 1); refresh.next();"><i class="fa fa-close"></i></a>
+              </div>
+              <tag-input class="calendar-event-tag m-t-20" [ngModel]="items" (onAdd)="onAdd($event)" [placeholder] = "'Add Event and hit enter'" [secondaryPlaceholder] = "'Add Event and hit enter'"></tag-input>
+              <div class="form-group">
+                <div class="checkbox checkbox-info calendar-event-label">
+                  <input id="checkbox" type="checkbox" checked (change)="setEvent()">
+                  <label for="checkbox"> <small class="text-info"> Check if not remove after set event (drag and drop)</small> </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </app-card>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="white-box">
+        <div id="calendar">
+          <div class="card">
+            <div class="card-header">
+              <app-mwl-utils-calendar-header
+                [(view)]="view"
+                [(viewDate)]="viewDate">
+              </app-mwl-utils-calendar-header>
+            </div>
+            <div class="card-block">
+              <div [ngSwitch]="view">
+                <mwl-calendar-month-view
+                  *ngSwitchCase="'month'"
+                  [viewDate]="viewDate"
+                  [events]="events"
+                  [activeDayIsOpen]="activeDayIsOpen"
+                  [refresh]="refresh"
+                  [activeDayIsOpen]="activeDayIsOpen"
+                  (dayClicked)="dayClicked($event.day)"
+                  (eventTimesChanged)="eventDropped($event)">
+                </mwl-calendar-month-view>
+                <mwl-calendar-week-view
+                  *ngSwitchCase="'week'"
+                  [viewDate]="viewDate"
+                  [events]="events"
+                  [refresh]="refresh"
+                  (eventTimesChanged)="eventDropped($event)">
+                </mwl-calendar-week-view>
+                <mwl-calendar-day-view
+                  *ngSwitchCase="'day'"
+                  [viewDate]="viewDate"
+                  [events]="events"
+                  [refresh]="refresh"
+                  (eventTimesChanged)="eventDropped($event)">
+                </mwl-calendar-day-view>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<app-card [title]="'Large Nav Filled With Symbol Icon'">
+  <wizard #wizard class="arc-wizard" navBarLayout="large-filled-symbols">
+    <wizard-step stepTitle="Profile" navigationSymbol="&#xf0b1;" navigationSymbolFontFamily="FontAwesome">
+      <div class="centered-content">
+        <div>
+          <h3>Content: Profile</h3>
+        </div>
+
+        <div class="btn-group mt-10">
+          <button type="button" class="btn btn-primary btn-sm" nextStep>Continue</button>
+        </div>
+      </div>
+    </wizard-step>
+    <wizard-step stepTitle="Address" navigationSymbol="&#xf085;" navigationSymbolFontFamily="FontAwesome">
+      <div class="centered-content">
+        <div>
+          <h3>Content: Address</h3>
+        </div>
+
+        <div class="btn-group mt-10">
+          <button type="button" class="btn btn-secondary btn-sm" previousStep>Back</button>
+          <button type="button" class="btn btn-primary btn-sm" nextStep>Continue</button>
+        </div>
+      </div>
+    </wizard-step>
+    <wizard-step stepTitle="Completed" navigationSymbol="&#xf00c;" navigationSymbolFontFamily="FontAwesome">
+      <div class="centered-content">
+        <div>
+          <h3>Content: Thank's</h3>
+        </div>
+
+        <div class="btn-group mt-10">
+          <button type="button" class="btn btn-secondary btn-sm" previousStep>Back</button>
+          <button type="button" class="btn btn-danger btn-sm" resetWizard>Reset</button>
+        </div>
+      </div>
+    </wizard-step>
+  </wizard>
+</app-card>

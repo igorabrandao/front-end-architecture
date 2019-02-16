@@ -1,0 +1,177 @@
+<div class="page-body">
+  <div class="row">
+    <div class="col-sm-12">
+      <app-card [title]="'Task list'" [cardOptionBlock]="true" [blockClass]="'task-list'">
+        <div class="dt-responsive" *ngIf="data | async as data">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6">
+              <div>
+                <label class="label-control">Show
+                  <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="25">25</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
+                  </select>
+                  entries
+                </label>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div style="text-align: right;">
+                <label>Search:
+                  <input type="search" [(ngModel)]="filterQuery" class="form-control input-sm full-data-search" placeholder="Search name">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="panel-heading">User information</div>-->
+          <div class="table-responsive">
+            <table class="table table-striped task-list-table table-bordered full-data-table" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
+                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+              <thead>
+              <tr>
+                <th>
+                  <mfDefaultSorter  by="id">#</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter  by="task">Task List</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter by="date">Last Commit</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter  by="status">Status</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter by="images">Assigned Users</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter>Action</mfDefaultSorter>
+                </th>
+              </tr>
+              <tr>
+              </tr>
+              </thead>
+              <tbody class="task-page">
+              <tr *ngFor="let item of mf.data">
+                <td>{{item.id}}</td>
+                <td>{{item.task}}</td>
+                <td>
+                  <input type="date" class="form-control" value="{{item.date}}" />
+                </td>
+                <td>
+                  <select name="select" class="form-control form-control-sm">
+                    <option value="opt1" [selected]="item.status === 'opt1'">Open</option>
+                    <option value="opt2" [selected]="item.status === 'opt2'">Resolved</option>
+                    <option value="opt3" [selected]="item.status === 'opt3'">Invalid</option>
+                    <option value="opt4" [selected]="item.status === 'opt4'">On hold</option>
+                    <option value="opt5" [selected]="item.status === 'opt5'">Close</option>
+                  </select>
+                </td>
+                <td>
+                  <a href="javascript:;" *ngFor="let image of item.images">
+                    <img class="img-fluid img-circle" src="{{image}}">
+                  </a>
+                  <a href="javascript:;"><i class="icofont icofont-plus f-w-600"></i></a>
+                </td>
+                <td ngbDropdown class="text-center">
+                  <a ngbDropdownToggle class="dropdown-toggle addon-btn" data-toggle="dropdown" aria-expanded="true">
+                    <i class="icofont icofont-ui-settings"></i>
+                  </a>
+                  <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-attachment"></i>Attach File</a>
+                    <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-ui-edit"></i>Edit Task</a>
+                    <div role="separator" class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript:;"><i class="icofont icofont-refresh"></i>Reassign Task</a>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <th>#</th>
+                <th>Task List</th>
+                <th>Last Commit</th>
+                <th>Status</th>
+                <th>Assigned User</th>
+                <th>Action</th>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </app-card>
+
+      <app-card [title]="'To list'">
+        <div class="row">
+          <div class="col-md-12 btn-add-task">
+            <div class="input-group input-group-button">
+              <input type="text" class="form-control" placeholder="Add Task">
+              <span class="input-group-addon ripple light" id="basic-addon1">
+                <button class="btn btn-primary"><i class="icofont icofont-plus f-w-600"></i>Add task</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="new-task">
+          <div class="to-do-list">
+            <div class="checkbox-fade fade-in-primary">
+              <label>
+                <input type="checkbox" value="1">
+                <span class="cr">
+                  <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                </span>
+                <span>Add Proper Cursor In Sortable Page</span>
+              </label>
+            </div>
+          </div>
+          <div class="to-do-list">
+            <div class="checkbox-fade fade-in-primary">
+              <label>
+                <input type="checkbox" value="2">
+                <span class="cr">
+                  <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                </span>
+                <span>Edit the draft for the icons</span>
+              </label>
+            </div>
+          </div>
+          <div class="to-do-list">
+            <div class="checkbox-fade fade-in-primary">
+              <label>
+                <input type="checkbox" value="3">
+                <span class="cr">
+                  <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                </span>
+                <span>Create UI design model</span>
+              </label>
+            </div>
+          </div>
+          <div class="to-do-list">
+            <div class="checkbox-fade fade-in-primary">
+              <label>
+                <input type="checkbox" value="4" checked>
+                <span class="cr">
+                  <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                </span>
+                <span>Checkbox Design issue</span>
+              </label>
+            </div>
+          </div>
+          <div class="to-do-list">
+            <div class="checkbox-fade fade-in-primary">
+              <label>
+                <input type="checkbox" value="5">
+                <span class="cr">
+                  <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                </span>
+                <span>Testing live data store</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </app-card>
+    </div>
+  </div>
+</div>

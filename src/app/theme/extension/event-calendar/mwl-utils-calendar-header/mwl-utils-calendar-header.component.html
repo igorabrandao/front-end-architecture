@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="btn-group pull-left">
+      <button class="btn btn-default btn-outline btn-sm" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="viewDateChange.next(viewDate)"><i class="feather icon-arrow-left"></i></button>
+      <button class="btn btn-default btn-outline btn-sm" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="viewDateChange.next(viewDate)"><i class="feather icon-arrow-right"></i></button>
+      <button class="btn btn-primary btn-outline btn-sm m-l-5" mwlCalendarToday [(viewDate)]="viewDate" (viewDateChange)="viewDateChange.next(viewDate)"> Today </button>
+    </div>
+  </div>
+  <div class="col-md-4 text-center">
+    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle') : locale }}</h3>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group pull-right">
+      <button class="btn btn-primary btn-sm" (click)="viewChange.emit('month')" [class.active]="view === 'month'">Month</button>
+      <button class="btn btn-default btn-sm" (click)="viewChange.emit('week')" [class.active]="view === 'week'">Week</button>
+      <button class="btn btn-primary btn-sm" (click)="viewChange.emit('day')" [class.active]="view === 'day'">Day</button>
+    </div>
+  </div>
+</div>
+<br>

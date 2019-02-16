@@ -1,0 +1,210 @@
+<div class="page-body">
+  <div class="row">
+    <div class="col-xl-4">
+      <!-- Overall Progress card start -->
+      <div class="card">
+        <div class="card-body">
+          <!-- <p>.col-sm-4</p> -->
+          <div class="issue-list-progress">
+            <h6>Overall Progress</h6>
+            <div class="issue-progress">
+              <div class="progress">
+                <span #issueText1 class="issue-text1 txt-primary"></span>
+                <div #issueBar1 class="issue-bar1 bg-primary"></div>
+              </div>
+              <!-- end of progress -->
+            </div>
+            <!-- end of issue progress -->
+          </div>
+          <!-- end of issue list progress -->
+          <!-- end of matric progress -->
+          <div class="table-responsive">
+            <table class="table matrics-table">
+              <tbody>
+              <tr>
+                <td>
+                  <strong>Assigned Hours</strong>
+                </td>
+                <td class="txt-primary">70 Hours</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Time Consumed</strong>
+                </td>
+                <td class="txt-danger">49 Hours</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Issues</strong>
+                </td>
+                <td class="txt-primary">19</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Bugs</strong>
+                </td>
+                <td class="txt-primary">16</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Health</strong>
+                </td>
+                <td class="txt-success">75%</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Commits</strong>
+                </td>
+                <td class="txt-primary">280</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Bugs Percentage</strong>
+                </td>
+                <td class="txt-danger">25%</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Assign Date</strong>
+                </td>
+                <td class="txt-info">02/11/2016</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Last closed on</strong>
+                </td>
+                <td class="txt-info">15/01/2017</td>
+              </tr>
+              </tbody>
+              <!-- end of tbody -->
+            </table>
+          </div>
+          <!-- end of table -->
+        </div>
+      </div>
+      <!-- Overall Progress card stendart -->
+    </div>
+    <div class="col-xl-8">
+      <!-- New ticket button card start -->
+      <div class="card">
+        <div class="card-body">
+          <div class="waves-light m-r-10 v-middle issue-btn-group ripple">
+            <button type="button" class="btn btn-sm btn-success btn-new-tickets m-r-15 m-t-5 m-b-5 ripple light"><i class="icofont icofont-paper-plane"></i><span class="m-l-10">New Tickets</span></button>
+            <div class="btn-group m-t-5 m-b-5">
+              <button type="button" class="btn btn-primary btn-sm ripple light"><i class="icofont icofont-ui-user"></i></button>
+              <button type="button" class="btn btn-primary btn-sm ripple light"><i class="icofont icofont-edit-alt"></i></button>
+              <button type="button" class="btn btn-primary btn-sm ripple light"><i class="icofont icofont-reply"></i></button>
+              <button type="button" class="btn btn-primary btn-sm ripple light"><i class="icofont icofont-printer"></i></button>
+            </div>
+            <div class="float-right bug-issue-link">
+              <ol class="breadcrumb bg-white m-0 p-t-5 p-b-0">
+                <li class="breadcrumb-item"><a href="javascript:;">16 Bugs</a></li>
+                <li class="breadcrumb-item"><a href="javascript:;">19 Issue</a></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- New ticket button card end -->
+      <!-- bug list card start -->
+      <app-card [title]="'Issue Details'" [cardOptionBlock]="true">
+        <div class="dt-responsive" *ngIf="data | async as data">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6">
+              <div>
+                <label class="label-control">Show
+                  <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="25">25</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
+                  </select>
+                  entries
+                </label>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div style="text-align: right;">
+                <label>Search:
+                  <input type="search" [(ngModel)]="filterQuery" class="form-control input-sm full-data-search" placeholder="Search name">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered full-data-table" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
+                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+              <thead>
+              <tr>
+                <th>
+                  <mfDefaultSorter  by="type">Type</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter  by="id">ID</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter by="description">Description</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter  by="date">Start Date</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter by="priority">Priority</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter by="assigned">Assigned</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter by="status">Status</mfDefaultSorter>
+                </th>
+              </tr>
+              <tr>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let item of mf.data">
+                <td>{{item.type}}</td>
+                <td>{{item.id}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.date}}</td>
+                <td>
+                  <span class="label label-danger" *ngIf="item.priority === 'Highest'">{{item.priority}}</span>
+                  <span class="label label-warning" *ngIf="item.priority === 'High'">{{item.priority}}</span>
+                  <span class="label label-success" *ngIf="item.priority === 'Normal'">{{item.priority}}</span>
+                  <span class="label label-primary" *ngIf="item.priority === 'Slow'">{{item.priority}}</span>
+                </td>
+                <td><a href="javascript:;">{{item.assigned}}</a></td>
+                <td>
+                  <span class="label label-primary" *ngIf="item.status === 'Open'">{{item.status}}</span>
+                  <span class="label label-danger" *ngIf="item.status === 'Close'">{{item.status}}</span>
+                  <span class="label label-warning" *ngIf="item.status === 'Pending'">{{item.status}}</span>
+                  <span class="label label-info" *ngIf="item.status === 'On Hold'">{{item.status}}</span>
+                </td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <th class="txt-primary">Type</th>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Start date</th>
+                <th>Priority</th>
+                <th>Assigned</th>
+                <th>Status</th>
+              </tr>
+              <tr>
+                <td colspan="7">
+                  <mfBootstrapPaginator class="pagination-main f-right"></mfBootstrapPaginator>
+                </td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <!-- end of table -->
+      </app-card>
+      <!-- bug list card end -->
+    </div>
+  </div>
+
+</div>

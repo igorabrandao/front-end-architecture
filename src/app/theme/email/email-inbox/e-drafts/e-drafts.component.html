@@ -1,0 +1,195 @@
+<div class="tab-pane fade show active" id="e-drafts" role="tabpanel">
+  <div class="mail-body">
+    <div class="mail-body-header">
+      <button type="button" class="btn btn-success btn-xs waves-effect waves-light">
+        <i class="icofont icofont-inbox"></i>
+      </button>
+      <button type="button" class="btn btn-danger btn-xs waves-effect waves-light">
+        <i class="icofont icofont-ui-delete"></i>
+      </button>
+      <div ngbDropdown class="btn-group dropdown-split-primary">
+        <button ngbDropdownToggle type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="icofont icofont-ui-folder"></i>
+        </button>
+        <div ngbDropdownMenu class="dropdown-menu">
+          <a class="dropdown-item waves-effect waves-light" href="javascript:">Action</a>
+          <a class="dropdown-item waves-effect waves-light" href="javascript:">Another action</a>
+          <a class="dropdown-item waves-effect waves-light" href="javascript:">Something else</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item waves-effect waves-light" href="javascript:">Separated link</a>
+        </div>
+      </div>
+      <div ngbDropdown class="btn-group dropdown-split-primary">
+        <button ngbDropdownToggle type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          More
+        </button>
+        <div ngbDropdownMenu class="dropdown-menu">
+          <a class="dropdown-item waves-effect waves-light" href="javascript:">Action</a>
+          <a class="dropdown-item waves-effect waves-light" href="javascript:">Another action</a>
+          <a class="dropdown-item waves-effect waves-light" href="javascript:">Something else</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item waves-effect waves-light" href="javascript:">Separated link</a>
+        </div>
+      </div>
+    </div>
+    <div class="mail-body-content">
+      <div class="table-responsive">
+        <table class="table">
+          <tr class="unread">
+            <td>
+              <div class="check-star">
+                <div class="checkbox-fade fade-in-primary checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
+                  </label>
+                </div>
+                <i class="icofont icofont-star text-warning"></i>
+              </div>
+            </td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Google Inc</a></td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></td>
+            <td class="email-attch"><a href="javascript:"><i class="icofont icofont-clip"></i></a></td>
+            <td class="email-time">08:01 AM</td>
+          </tr>
+          <tr class="unread">
+            <td>
+              <div class="check-star">
+                <div class="checkbox-fade fade-in-primary checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
+                  </label>
+                </div>
+                <i class="icofont icofont-star text-primary"></i>
+              </div>
+            </td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">John Doe</a></td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Coming Up Next Week</a></td>
+            <td class="email-attch"><a href="javascript:"><i class="icofont icofont-clip"></i></a></td>
+            <td class="email-time">13:02 PM</td>
+          </tr>
+          <tr class="unread">
+            <td>
+              <div class="check-star">
+                <div class="checkbox-fade fade-in-primary checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
+                  </label>
+                </div>
+                <i class="icofont icofont-star text-info"></i>
+              </div>
+            </td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Sara Soudein</a></td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">SVG new updates comes for you</a></td>
+            <td class="email-attch"><a href="javascript:"><i class="icofont icofont-clip"></i></a></td>
+            <td class="email-time">00:05 AM</td>
+          </tr>
+          <tr class="unread">
+            <td>
+              <div class="check-star">
+                <div class="checkbox-fade fade-in-primary checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
+                  </label>
+                </div>
+                <i class="icofont icofont-star text-danger"></i>
+              </div>
+            </td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Rinky Behl</a></td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Photoshop updates are available</a></td>
+            <td class="email-attch"><a href="javascript:"><i class="icofont icofont-clip"></i></a></td>
+            <td class="email-time">10:01 AM</td>
+          </tr>
+          <tr class="read">
+            <td>
+              <div class="check-star">
+                <div class="checkbox-fade fade-in-primary checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
+                  </label>
+                </div>
+                <i class="icofont icofont-star text-primary"></i>
+              </div>
+            </td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Harry John</a></td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">New upcoming data available</a></td>
+            <td class="email-attch"><a href="javascript:"><i class="icofont icofont-clip"></i></a></td>
+            <td class="email-time">11:01 AM</td>
+          </tr>
+          <tr class="read">
+            <td>
+              <div class="check-star">
+                <div class="checkbox-fade fade-in-primary checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
+                  </label>
+                </div>
+                <i class="icofont icofont-star text-danger"></i>
+              </div>
+            </td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Hanry Joseph</a></td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">SCSS current working for new updates</a></td>
+            <td class="email-attch"><a href="javascript:"><i class="icofont icofont-clip"></i></a></td>
+            <td class="email-time">12:01 PM</td>
+          </tr>
+          <tr class="read">
+            <td>
+              <div class="check-star">
+                <div class="checkbox-fade fade-in-primary checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
+                  </label>
+                </div>
+                <i class="icofont icofont-star text-primary"></i>
+              </div>
+            </td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Liu Koi Yan</a></td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Charts waiting for you</a></td>
+            <td class="email-attch"><a href="javascript:"><i class="icofont icofont-clip"></i></a></td>
+            <td class="email-time">07:15 AM</td>
+          </tr>
+          <tr class="read">
+            <td>
+              <div class="check-star">
+                <div class="checkbox-fade fade-in-primary checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
+                  </label>
+                </div>
+                <i class="icofont icofont-star text-danger"></i>
+              </div>
+            </td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Hanry Joseph</a></td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">SCSS current working for new updates</a></td>
+            <td class="email-attch"><a href="javascript:"><i class="icofont icofont-clip"></i></a></td>
+            <td class="email-time">12:01 PM</td>
+          </tr>
+          <tr class="read">
+            <td>
+              <div class="check-star">
+                <div class="checkbox-fade fade-in-primary checkbox">
+                  <label>
+                    <input type="checkbox" value="">
+                    <span class="cr"><i class="cr-icon icofont icofont-verification-check txt-primary"></i></span>
+                  </label>
+                </div>
+                <i class="icofont icofont-star text-primary"></i>
+              </div>
+            </td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Liu Koi Yan</a></td>
+            <td><a [routerLink]="['/email/email-read/']" class="email-name waves-effect">Charts waiting for you</a></td>
+            <td class="email-attch"><a href="javascript:"><i class="icofont icofont-clip"></i></a></td>
+            <td class="email-time">07:15 AM</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

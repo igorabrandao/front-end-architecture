@@ -1,0 +1,142 @@
+<div class="row">
+  <div class="col-sm-12">
+    <!-- Panel card start -->
+    <app-card [title]="'Panel'" [blockClass]="'panels-wells'" [cardOptionBlock]="true">
+      <div class="row">
+        <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading bg-default txt-white">
+              Default Panel
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.</p>
+            </div>
+            <div class="panel-footer">
+              Panel Footer
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+          <div class="panel panel-success">
+            <div class="panel-heading bg-success">
+              Success Panel
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.</p>
+            </div>
+            <div class="panel-footer text-success">
+              Panel Footer
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading bg-primary">
+              Primary Panel
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.</p>
+            </div>
+            <div class="panel-footer text-primary">
+              Panel Footer
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+          <div class="panel panel-danger">
+            <div class="panel-heading bg-danger">
+              Danger Panel
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.</p>
+            </div>
+            <div class="panel-footer text-danger">
+              Panel Footer
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+          <div class="panel panel-warning">
+            <div class="panel-heading bg-warning">
+              Warning Panel
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.</p>
+            </div>
+            <div class="panel-footer text-warning">
+              Panel Footer
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
+          <div class="panel panel-info">
+            <div class="panel-heading bg-info">
+              Info Panel
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.</p>
+            </div>
+            <div class="panel-footer text-info">
+              Panel Footer
+            </div>
+          </div>
+        </div>
+        <!-- end of row -->
+      </div>
+    </app-card>
+    <!-- Panel card end -->
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <!-- Wells card start -->
+    <app-card [title]="'Wells'" [blockClass]="'panels-wells'" [cardOptionBlock]="true">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="well well-sm">
+            Small Well
+          </div>
+          <div class="well">
+            Normal Well
+          </div>
+          <div class="well well-lg">
+            Large Well
+          </div>
+        </div>
+      </div>
+    </app-card>
+    <!-- Wells card end -->
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 col-lg-6">
+    <app-card [title]="'Default'" [headerContent]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit'" [cardOptionBlock]="true">
+      <ngb-pagination [collectionSize]="totalItems" [boundaryLinks]="true"></ngb-pagination>
+    </app-card>
+  </div>
+  <div class="col-md-12 col-lg-6">
+    <app-card [title]="'Disabled'" [headerContent]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit'" [cardOptionBlock]="true">
+      <ngb-pagination [collectionSize]="bigTotalItems" [disabled]="true" [maxSize]="maxSize" [boundaryLinks]="true"></ngb-pagination>
+    </app-card>
+  </div>
+  <div class="col-md-12 col-lg-6">
+    <app-card [title]="'Pagination Size'" [headerContent]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit'" [cardOptionBlock]="true">
+      <div class="sub-title m-t-15">Large</div>
+      <ngb-pagination [collectionSize]="bigTotalItems" [maxSize]="maxSize" size="lg"></ngb-pagination>
+      <div class="sub-title m-t-15">Medium</div>
+      <ngb-pagination [collectionSize]="bigTotalItems" [maxSize]="maxSize" [boundaryLinks]="true"></ngb-pagination>
+      <div class="sub-title m-t-15">Small</div>
+      <ngb-pagination [collectionSize]="bigTotalItems" [maxSize]="maxSize" size="sm" [boundaryLinks]="true"></ngb-pagination>
+    </app-card>
+  </div>
+  <div class="col-md-12 col-lg-6">
+    <app-card [title]="'Pagination Advance'" [headerContent]="'Lorem ipsum dolor sit amet, consectetur adipisicing elit'" [cardOptionBlock]="true">
+      <div class="sub-title m-t-15">maxSize = 5, rotate = false</div>
+      <ngb-pagination [collectionSize]="120" [(page)]="pageAdvance" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+      <div class="sub-title m-t-15">maxSize = 5, rotate = true</div>
+      <ngb-pagination [collectionSize]="120" [(page)]="pageAdvance" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
+      <div class="sub-title m-t-15">maxSize = 5, rotate = true, ellipses = false</div>
+      <ngb-pagination [collectionSize]="120" [(page)]="pageAdvance" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+    </app-card>
+  </div>
+</div>

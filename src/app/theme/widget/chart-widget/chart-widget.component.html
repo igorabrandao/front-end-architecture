@@ -1,0 +1,631 @@
+<div class="page-body">
+  <div class="row">
+
+    <!-- task and revenue start -->
+    <div class="col-xl-4 col-md-12">
+      <app-card [title]="'Your Tasks'" [cardClass]="'per-task-card'">
+        <div class="row per-task-block text-center">
+          <div class="col-6">
+            <div data-label="45%" class="radial-bar radial-bar-45 radial-bar-lg radial-bar-primary"></div>
+            <h6 class="text-muted">Finished</h6>
+            <p class="text-muted">642</p>
+            <button class="btn btn-primary btn-round btn-sm ripple light">Manage</button>
+          </div>
+          <div class="col-6">
+            <div data-label="30%" class="radial-bar radial-bar-30 radial-bar-lg radial-bar-primary"></div>
+            <h6 class="text-muted">Remaining</h6>
+            <p class="text-muted">495</p>
+            <button class="btn btn-primary btn-outline-primary btn-round btn-sm ripple light">Manage</button>
+          </div>
+        </div>
+      </app-card>
+    </div>
+    <div class="col-xl-8 col-md-12">
+      <app-card [title]="'Revenue'">
+        <div id="revenue-map" [style.height]="'215px'"></div>
+      </app-card>
+    </div>
+    <!-- task and revenue end -->
+
+    <!--  average value start -->
+    <div class="col-xl-4 col-lg-6 col-sm-12">
+      <app-card [title]="'Average Value'" [blockClass]="'p-0'" [cardClass]="'o-hidden'">
+        <chart id="avg-value" [type]="'line'" [data]="avgValueData" [options]="avgValueOption"></chart>
+      </app-card>
+    </div>
+    <div class="col-xl-4 col-lg-6 col-sm-12">
+      <app-card [title]="'Average Income'" [blockClass]="'p-0'" [cardClass]="'o-hidden'">
+        <chart id="avg-income" [type]="'line'" [data]="avgIncomeData" [options]="avgIncomeOption"></chart>
+      </app-card>
+    </div>
+    <div class="col-xl-4 col-lg-12 col-sm-12">
+      <app-card [title]="'New Users'">
+        <chart id="new-user-chart" [type]="'doughnut'" [data]="newUserData" [options]="newUserOption" [style.margin-top]="'-20px'"></chart>
+      </app-card>
+    </div>
+    <!--  average value end -->
+
+    <!--  sale analytics start -->
+    <div class="col-xl-8 col-md-12">
+      <app-card [title]="'Sales Analytics'">
+        <div id="sales-analytics" [style.height]="'460px'"></div>
+      </app-card>
+    </div>
+    <div class="col-xl-4 col-md-12">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-xl-12">
+          <div class="card">
+            <div class="card-block">
+              <div class="row">
+                <div class="col">
+                  <h4>$256.23</h4>
+                  <p class="text-muted">This Month</p>
+                </div>
+                <div class="col-auto">
+                  <label class="label label-success">+20%</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-8">
+                  <chart id="this-month" [type]="'bar'" [data]="thisMonthData" [options]="thisMonthOption"></chart>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-xl-12">
+          <div class="card quater-card">
+            <div class="card-block">
+              <h6 class="text-muted m-b-15">This Quarter</h6>
+              <h4>$3,9452.50</h4>
+              <p class="text-muted">$3,9452.50</p>
+              <h5>87</h5>
+              <p class="text-muted">Online Revenue<span class="f-right">80%</span></p>
+              <div class="progress"><div class="progress-bar bg-c-blue" [style.width]="'80%'"></div></div>
+              <h5 class="m-t-15">68</h5>
+              <p class="text-muted">Offline Revenue<span class="f-right">50%</span></p>
+              <div class="progress"><div class="progress-bar bg-c-green" [style.width]="'50%'"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  sale analytics end -->
+
+    <!-- sale order start -->
+    <div class="col-xl-4 col-md-6">
+      <div class="card o-hidden">
+        <div class="card-block bg-c-red text-white o-hidden">
+          <h6>Sales Per Day <span class="f-right"><i class="fa fa-line-chart m-r-15"></i>3%</span></h6>
+          <chart id="sale-chart1" [type]="'line'" [data]="sale1Data" [options]="saleOption"></chart>
+        </div>
+        <div class="card-footer text-center">
+          <div class="row">
+            <div class="col-6 b-r-default">
+              <h4>$4230</h4>
+              <p class="text-muted m-b-0">Total Revenue</p>
+            </div>
+            <div class="col-6">
+              <h4>321</h4>
+              <p class="text-muted m-b-0">Today Sales</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-6">
+      <div class="card o-hidden">
+        <div class="card-block bg-c-green text-white o-hidden">
+          <h6>Visits<span class="f-right"><i class="fa fa-line-chart m-r-15"></i>9%</span></h6>
+          <chart id="sale-chart2" [type]="'line'" [data]="sale2Data" [options]="saleOption"></chart>
+        </div>
+        <div class="card-footer text-center">
+          <div class="row">
+            <div class="col-6 b-r-default">
+              <h4>3562</h4>
+              <p class="text-muted m-b-0">Monthly Visits</p>
+            </div>
+            <div class="col-6">
+              <h4>96</h4>
+              <p class="text-muted m-b-0">Today Visits</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-12">
+      <div class="card o-hidden">
+        <div class="card-block bg-c-blue text-white o-hidden">
+          <h6>Orders<span class="f-right"><i class="fa fa-line-chart m-r-15"></i>12%</span></h6>
+          <chart id="sale-chart3" [type]="'line'" [data]="sale3Data" [options]="saleOption"></chart>
+        </div>
+        <div class="card-footer text-center">
+          <div class="row">
+            <div class="col-6 b-r-default">
+              <h4>1695</h4>
+              <p class="text-muted m-b-0">Monthly Orders</p>
+            </div>
+            <div class="col-6">
+              <h4>52</h4>
+              <p class="text-muted m-b-0">Today Orders</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- sale order end -->
+
+    <!-- sale order start -->
+    <div class="col-xl-3 col-md-6">
+      <app-card title="'Monthly Expense'">
+        <div id="monthly-expense" [style.height]="'150px'"></div>
+        <div class="row text-center">
+          <div class="col-6"><h6 class="text-muted" id="exp-val"></h6></div>
+          <div class="col-6"><h6 class="text-muted">Safe</h6></div>
+        </div>
+      </app-card>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <app-card title="'Daily Visitors'">
+        <div id="daily-visitor" [style.height]="'150px'"></div>
+        <div class="row text-center">
+          <div class="col-6"><h6 class="text-muted">3,652</h6></div>
+          <div class="col-6"><h6 class="text-muted"><i class="fa fa-arrow-up text-c-green m-r-10"></i>15%</h6></div>
+        </div>
+      </app-card>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <app-card [title]="'Daily Sales'">
+        <div id="daily-sales" [style.height]="'150px'"></div>
+        <h6><span class="text-c-blue">1652</span> Products Sold</h6>
+      </app-card>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <app-card [title]="'Storage Space'">
+        <div id="storage-space" [style.height]="'150px'"></div>
+        <h6><span class="text-c-blue">1652</span> Products Sold</h6>
+      </app-card>
+    </div>
+    <!-- sale order end -->
+
+    <!-- seo start -->
+    <div class="col-xl-8 col-md-12">
+      <app-card [title]="'Allocation'">
+        <div class="row">
+          <div class="col-sm-8">
+            <div id="allocation-map" [style.height]="'265px'" ></div>
+          </div>
+          <div class="col-sm-4">
+            <div id="allocation-chart" [style.height]="'265px'" ></div>
+          </div>
+        </div>
+      </app-card>
+    </div>
+    <div class="col-xl-4 col-md-12">
+      <div class="card">
+        <div class="card-block">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <h3>$16,756</h3>
+              <h6 class="text-muted m-b-0">Visits<i class="fa fa-caret-down text-c-red m-l-10"></i></h6>
+            </div>
+            <div class="col-7">
+              <chart id="seo-chart1" [type]="'line'" [data]="seo1Data" [options]="seoOption"></chart>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-block">
+          <div class="row align-items-center">
+            <div class="col-5">
+              <h3>49.54%</h3>
+              <h6 class="text-muted m-b-0">Bounce Rate<i class="fa fa-caret-up text-c-green m-l-10"></i></h6>
+            </div>
+            <div class="col-7">
+              <chart id="seo-chart2" [type]="'bar'" [data]="seo2Data" [options]="seoOption"></chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- seo end -->
+
+    <!-- sec e-commerce start -->
+    <div class="col-xl-4 col-md-12">
+      <div class="card o-hidden">
+        <div class="card-block bg-c-green p-b-0">
+          <div class="row text-white">
+            <div class="col-auto">
+              <h4 class="m-b-5">$654</h4>
+              <h6>+1.65(2.56%)</h6>
+            </div>
+            <div class="col text-right">
+              <h6>Friday</h6>
+            </div>
+          </div>
+          <chart id="sec-ecommerce-chart-line" [type]="'line'" [data]="secLineData" [options]="secOption"></chart>
+          <div class="row justify-content-center">
+            <div class="col-8">
+              <chart id="sec-ecommerce-chart-bar" [type]="'bar'" [data]="secBarData" [options]="secOption" [style.margin-top]="'-125px'"></chart>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <h4>$2654.00</h4>
+          <p class="text-muted">Sales in Nov.</p>
+          <div class="row">
+            <div class="col">
+              <p class="text-muted m-b-5">From Market</p>
+              <h6>$1860.00</h6>
+            </div>
+            <div class="col">
+              <p class="text-muted m-b-5">Referral</p>
+              <h6>$500.00</h6>
+            </div>
+            <div class="col">
+              <p class="text-muted m-b-5">Affiliate</p>
+              <h6>$294.00</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 col-md-12">
+      <div class="card">
+        <div class="card-block">
+          <div class="row justify-content-center text-center">
+            <div class="col-5">
+              <h6 class="text-muted">Real-Time Visits</h6>
+              <h3>53k</h3>
+            </div>
+            <div class="col-5">
+              <h6 class="text-muted">Returning Visitors</h6>
+              <h3>10k</h3>
+            </div>
+          </div>
+          <div id="sec-ecommerce-bar-chart" [style.height]="'300px'"></div>
+          <div class="row justify-content-center text-center b-t-default m-t-15 p-t-20">
+            <div class="col-3 b-r-default">
+              <h5>85%</h5>
+              <p class="text-muted m-b-0">Satisfied</p>
+            </div>
+            <div class="col-3 b-r-default">
+              <h5>6%</h5>
+              <p class="text-muted m-b-0">Unsatisfied</p>
+            </div>
+            <div class="col-3">
+              <h5>9%</h5>
+              <p class="text-muted m-b-0">NA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- seo e-commerce end -->
+
+    <!-- seo analytics start -->
+    <div class="col-xl-3 col-md-6">
+      <div class="card">
+        <div class="card-block o-hidden">
+          <h3>20500</h3>
+          <p class="text-muted">Site Analysis</p>
+          <chart id="seo-analytics1" [type]="'line'" [data]="seoAnalytics1Data" [options]="seoAnalyticsOption" [style.margin-top]="'-25px'" [style.margin-bottom]="'-20px'"></chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="card">
+        <div class="card-block o-hidden">
+          <h3>20500</h3>
+          <p class="text-muted">Total Sales</p>
+          <chart id="seo-analytics2" [type]="'line'" [data]="seoAnalytics2Data" [options]="seoAnalyticsOption" [style.margin-top]="'-25px'" [style.margin-bottom]="'-20px'"></chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="card">
+        <div class="card-block o-hidden">
+          <h3>28000</h3>
+          <p class="text-muted">Total Visits</p>
+          <chart id="seo-analytics3" [type]="'line'" [data]="seoAnalytics3Data" [options]="seoAnalyticsOption" [style.margin-top]="'-25px'" [style.margin-bottom]="'-20px'"></chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="card">
+        <div class="card-block o-hidden">
+          <h3>59600</h3>
+          <p class="text-muted">Total Usage</p>
+          <chart id="seo-analytics4" [type]="'line'" [data]="seoAnalytics4Data" [options]="seoAnalyticsOption" [style.margin-top]="'-25px'" [style.margin-bottom]="'-20px'"></chart>
+        </div>
+      </div>
+    </div>
+    <!-- seo analytics end -->
+
+    <!-- income start -->
+    <div class="col-xl-4 col-md-6">
+      <div class="card o-hidden">
+        <div class="card-header">
+          <h5>Sale Income</h5>
+        </div>
+        <div class="card-block">
+          <div class="row">
+            <div class="col-4">
+              <p class="text-muted m-b-5">Overall</p>
+              <h6>68.52%</h6>
+            </div>
+            <div class="col-4">
+              <p class="text-muted m-b-5">Monthly</p>
+              <h6>28.90%</h6>
+            </div>
+            <div class="col-4">
+              <p class="text-muted m-b-5">Day</p>
+              <h6>13.50%</h6>
+            </div>
+          </div>
+        </div>
+        <chart id="sal-income" [type]="'line'" [data]="saleIncome1Data" [options]="saleIncomeOption"></chart>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-6">
+      <div class="card o-hidden">
+        <div class="card-header">
+          <h5>Rent Income</h5>
+        </div>
+        <div class="card-block">
+          <div class="row">
+            <div class="col-4">
+              <p class="text-muted m-b-5">Overall</p>
+              <h6>68.52%</h6>
+            </div>
+            <div class="col-4">
+              <p class="text-muted m-b-5">Monthly</p>
+              <h6>28.90%</h6>
+            </div>
+            <div class="col-4">
+              <p class="text-muted m-b-5">Day</p>
+              <h6>13.50%</h6>
+            </div>
+          </div>
+        </div>
+        <chart id="rent-income" [type]="'line'" [data]="saleIncome2Data" [options]="saleIncomeOption"></chart>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-12">
+      <div class="card o-hidden">
+        <div class="card-header">
+          <h5>Income Analysis</h5>
+        </div>
+        <div class="card-block">
+          <div class="row">
+            <div class="col-4">
+              <p class="text-muted m-b-5">Overall</p>
+              <h6>68.52%</h6>
+            </div>
+            <div class="col-4">
+              <p class="text-muted m-b-5">Monthly</p>
+              <h6>28.90%</h6>
+            </div>
+            <div class="col-4">
+              <p class="text-muted m-b-5">Day</p>
+              <h6>13.50%</h6>
+            </div>
+          </div>
+        </div>
+        <chart id="income-analysis" [type]="'line'" [data]="saleIncome3Data" [options]="saleIncomeOption"></chart>
+      </div>
+    </div>
+    <!-- income end -->
+
+    <!-- sales start -->
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-block text-center">
+          <div class="row">
+            <div class="col-xl-3 col-md-6 m-t-10 m-b-10">
+              <h6>Daily Sales</h6>
+              <div class="row justify-content-center">
+                <div class="col-8">
+                  <chart id="sale-report-1" [type]="'bar'" [data]="saleReport1Data" [options]="saleReportOption"></chart>
+                </div>
+              </div>
+              <h5><i class="fa fa-caret-up text-c-green m-r-10"></i>$16524</h5>
+            </div>
+            <div class="col-xl-3 col-md-6 m-t-10 m-b-10">
+              <h6>Weekly Sales</h6>
+              <div class="row justify-content-center">
+                <div class="col-8">
+                  <chart id="sale-report-2" [type]="'bar'" [data]="saleReport2Data" [options]="saleReportOption"></chart>
+                </div>
+              </div>
+              <h5><i class="fa fa-caret-down text-c-red m-r-10"></i>$6423</h5>
+            </div>
+            <div class="col-xl-3 col-md-6 m-t-10 m-b-10">
+              <h6>Monthly Sales</h6>
+              <div class="row justify-content-center">
+                <div class="col-8">
+                  <chart id="sale-report-3" [type]="'bar'" [data]="saleReport3Data" [options]="saleReportOption"></chart>
+                </div>
+              </div>
+              <h5><i class="fa fa-caret-up text-c-green m-r-10"></i>$14524</h5>
+            </div>
+            <div class="col-xl-3 col-md-6 m-t-10 m-b-10">
+              <h6>Yearly Sales</h6>
+              <div class="row justify-content-center">
+                <div class="col-8">
+                  <chart id="sale-report-4" [type]="'bar'" [data]="saleReport4Data" [options]="saleReportOption"></chart>
+                </div>
+              </div>
+              <h5><i class="fa fa-caret-down text-c-red m-r-10"></i>$8652</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- sales end -->
+
+    <!-- real time start -->
+    <div class="col-xl-8 col-md-12">
+      <app-card [title]="'Realtime Data of Visits'">
+        <div id="real-time-chart" [style.height]="'330px'"></div>
+      </app-card>
+    </div>
+    <div class="col-xl-4 col-md-12">
+      <app-card [title]="'Sales Prediction'">
+        <div class="row justify-content-end align-items-center">
+          <div class="col-md-6">
+            <h3>$3987</h3>
+            <p class="text-muted m-b-5">25% Increased</p>
+            <h6>(160-180 Sales)</h6>
+          </div>
+          <div class="col-md-6">
+            <div id="sales-prediction-chart" [style.height]="'100px'"></div>
+          </div>
+        </div>
+      </app-card>
+      <app-card [title]="'Emails Sent'">
+        <div class="row justify-content-end align-items-center">
+          <div class="col-md-6">
+            <h6 id="opened" class="text-c-blue">520 Opened</h6>
+            <h6 id="unopened" class="text-c-red">70 Unopened</h6>
+          </div>
+          <div class="col-md-6">
+            <div id="emails-sent-sales-chart" [style.height]="'100px'"></div>
+          </div>
+        </div>
+      </app-card>
+    </div>
+    <!-- real time end -->
+
+    <!-- project and visit start -->
+    <div class="col-xl-4 col-md-12">
+      <div class="card">
+        <div class="card-block bg-c-blue">
+          <div id="project-earning" [style.height]="'200px'"></div>
+        </div>
+        <div class="card-footer">
+          <h6 class="text-muted m-b-30 m-t-15">Total completed project and earning</h6>
+          <div class="row text-center">
+            <div class="col-6 b-r-default">
+              <h6 class="text-muted m-b-10">Completed Projects</h6>
+              <h3 class="m-b-0">175</h3>
+            </div>
+            <div class="col-6">
+              <h6 class="text-muted m-b-10">Total Earnings</h6>
+              <h3 class="m-b-0">76.6M</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 col-md-12">
+      <app-card [title]="'Realtime Data of Visits'">
+        <div id="realtime-visit-chart" [style.height]="'280px'"></div>
+      </app-card>
+    </div>
+    <!-- project and visit end -->
+
+    <!-- income start -->
+    <div class="col-xl-4 col-md-6">
+      <div class="card o-hidden">
+        <div class="card-header">
+          <h5>Total Leads</h5>
+        </div>
+        <div class="card-block">
+          <p class="text-c-green f-w-500"><i class="fa fa-caret-up m-r-15"></i> 18% High than last month</p>
+          <div class="row">
+            <div class="col-4 b-r-default">
+              <p class="text-muted m-b-5">Overall</p>
+              <h5>76.12%</h5>
+            </div>
+            <div class="col-4 b-r-default">
+              <p class="text-muted m-b-5">Monthly</p>
+              <h5>16.40%</h5>
+            </div>
+            <div class="col-4">
+              <p class="text-muted m-b-5">Day</p>
+              <h5>4.56%</h5>
+            </div>
+          </div>
+        </div>
+        <chart id="tot-lead" [type]="'line'" [data]="totalSale1Data" [options]="totalSaleOption"></chart>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-6">
+      <div class="card o-hidden">
+        <div class="card-header">
+          <h5>Total Vendors</h5>
+        </div>
+        <div class="card-block">
+          <p class="text-c-red f-w-500"><i class="fa fa-caret-down m-r-15"></i> 24% High than last month</p>
+          <div class="row">
+            <div class="col-4 b-r-default">
+              <p class="text-muted m-b-5">Overall</p>
+              <h5>68.52%</h5>
+            </div>
+            <div class="col-4 b-r-default">
+              <p class="text-muted m-b-5">Monthly</p>
+              <h5>28.90%</h5>
+            </div>
+            <div class="col-4">
+              <p class="text-muted m-b-5">Day</p>
+              <h5>13.50%</h5>
+            </div>
+          </div>
+        </div>
+        <chart id="tot-vendor" [type]="'line'" [data]="totalSale2Data" [options]="totalSaleOption"></chart>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-12">
+      <div class="card o-hidden">
+        <div class="card-header">
+          <h5>Invoice Generate</h5>
+        </div>
+        <div class="card-block">
+          <p class="text-c-green f-w-500"><i class="fa fa-caret-up m-r-15"></i> 20% High than last month</p>
+          <div class="row">
+            <div class="col-4 b-r-default">
+              <p class="text-muted m-b-5">Overall</p>
+              <h5>68.52%</h5>
+            </div>
+            <div class="col-4 b-r-default">
+              <p class="text-muted m-b-5">Monthly</p>
+              <h5>28.90%</h5>
+            </div>
+            <div class="col-4">
+              <p class="text-muted m-b-5">Day</p>
+              <h5>13.50%</h5>
+            </div>
+          </div>
+        </div>
+        <chart id="invoice-gen" [type]="'line'" [data]="totalSale3Data" [options]="totalSaleOption"></chart>
+      </div>
+    </div>
+    <!-- income end -->
+
+    <!-- page view prod-sale start -->
+    <div class="col-xl-4 col-md-6">
+      <div class="card">
+        <div class="card-block o-hidden">
+          <h2>7562</h2>
+          <p class="text-muted">Increase in Page Views</p>
+          <chart id="page-view" [type]="'line'" [data]="pageViewData" [options]="pageViewOption" [style.margin-bottom]="'-100px'"></chart>
+        </div>
+      </div>
+      <div class="card o-hidden">
+        <div class="card-block">
+          <h2>562</h2>
+          <p class="m-b-0 text-muted">Bounce Rate of Site</p>
+        </div>
+        <chart id="bounce-rate" [type]="'line'" [data]="bounceRateData" [options]="bounceRateOption" [style.margin-bottom]="'-100px'"></chart>
+      </div>
+    </div>
+    <div class="col-xl-8 col-md-6">
+      <app-card [title]="'Products Sales'">
+        <div id="product-sales-chart" [style.height]="'400px'"></div>
+      </app-card>
+    </div>
+    <!-- page view prod-sale end -->
+  </div>
+</div>

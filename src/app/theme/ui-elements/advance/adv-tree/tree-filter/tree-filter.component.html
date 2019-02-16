@@ -1,0 +1,11 @@
+<span class="sub-title">Filter</span>
+    <div class="input-group input-group-button">
+      <input id="filter" #filter (keyup)="tree.treeModel.filterNodes(filter.value)" class="form-control" placeholder="Filter Nodes"/>
+      <div _ngcontent-c11="" class="input-group-append">
+        <button _ngcontent-c11="" class="btn btn-primary btn-sm" type="button" (click)="tree.treeModel.clearFilter()">Clear</button>
+      </div>
+    </div>
+<tree-root #tree [focused]="true" [nodes]="nodes"></tree-root>
+<span class="sub-title">Filter By Function (Fuzzy Search)</span>
+
+<input id="filter3" class="form-control m-t-15" #filter3 (keyup)="filterFn(filter3.value, tree.treeModel)" placeholder="Filter Nodes by Fuzzy Search"/>

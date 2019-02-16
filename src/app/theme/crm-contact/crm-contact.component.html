@@ -1,0 +1,228 @@
+<div class="card">
+  <div class="card-header animation-model">
+    <h5>Contact</h5>
+    <button type="button" class="btn btn-primary waves-effect waves-light f-right d-inline-block md-trigger" (click)="openMyModal('effect-13')"> <i class="icofont icofont-plus m-r-5"></i> Add Contact
+    </button>
+  </div>
+  <div class="card-body">
+    <div class="table-content crm-table">
+      <div class="project-table">
+        <div id="crm-contact" class="dt-responsive" *ngIf="data | async as data">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-sm-12 col-md-6">
+              <div>
+                <label class="label-control">Show
+                  <select class="form-control input-sm full-data-show-entry" [(ngModel)]="rowsOnPage">
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="25">25</option>
+                    <option [ngValue]="50">50</option>
+                    <option [ngValue]="100">100</option>
+                  </select>
+                  entries
+                </label>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div style="text-align: right;">
+                <label>Search:
+                  <input type="search" [(ngModel)]="filterQuery" class="form-control input-sm full-data-search" placeholder="Search name">
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="panel-heading">User information</div>-->
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered full-data-table" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
+                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+              <thead>
+              <tr>
+                <th>
+                  <mfDefaultSorter  by="image">Profile</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter  by="name">Name</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter  by="email">Email</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter  by="position">Position</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter by="office">Office</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter  by="age">Age</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter  by="age">Favourite</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter by="phone_no">Phone No.</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter by="start-date">Start date</mfDefaultSorter>
+                </th>
+                <th>
+                  <mfDefaultSorter>Action</mfDefaultSorter>
+                </th>
+              </tr>
+              <tr>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let item of mf.data; let i = index;">
+                <td><img src="{{item.image}}" class="d-inline-block img-circle " alt="tbl"></td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.position}}</td>
+                <td>{{item.office}}</td>
+                <td>{{item.age}}</td>
+                <td class="text-primary text-center">
+                  <span *ngIf="item.age > 45"><i class="fa fa-star" aria-hidden="true"></i></span>
+                  <span *ngIf="item.age <= 45 && item.age > 25"><i class="fa fa-star-half-o" aria-hidden="true"></i></span>
+                  <span *ngIf="item.age <= 25"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                </td>
+                <td>{{item.phone_no}}</td>
+                <td>{{item.date}}</td>
+                <td class="action-icon">
+                  <a href="javascript:;" class="m-r-15 crm-action-view text-info" (click)="openMyModalData(i);modalDefault.show();"><i class="fa fa-book"></i></a>
+                  <a href="javascript:;" class="m-r-15 crm-action-edit text-primary"><i class="fa fa-edit"></i></a>
+                  <a href="javascript:;" class="crm-action-delete text-danger"><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <th>Profile</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Favourite</th>
+                <th>Phone No.</th>
+                <th>Start date</th>
+                <th>Action</th>
+              </tr>
+              <tr>
+                <td colspan="10">
+                  <mfBootstrapPaginator class="pagination-main f-right"></mfBootstrapPaginator>
+                </td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Add Contact Start Model -->
+<app-modal-animation [modalID]="'effect-13'" [modalClass]="'md-effect-13'">
+  <h3 class="f-26">Add Contact</h3>
+  <div class="text-center">
+    <div class="input-group">
+      <span class="input-group-prepend" id="basic-addon1"><label class="input-group-text"><i class="icofont icofont-user"></i></label></span>
+      <input type="text" class="form-control" placeholder="Full Name">
+    </div>
+    <div class="input-group">
+      <span class="input-group-prepend" id="basic-addon2"><label class="input-group-text"><i class="icofont icofont-user"></i></label></span>
+      <input type="text" class="form-control" placeholder="Email">
+    </div>
+    <div class="input-group">
+      <span class="input-group-prepend" id="basic-addon3"><label class="input-group-text"><i class="icofont icofont-user"></i></label></span>
+      <input type="text" class="form-control" placeholder="Position">
+    </div>
+    <div class="input-group">
+      <span class="input-group-prepend" id="basic-addon4"><label class="input-group-text"><i class="icofont icofont-user"></i></label></span>
+      <input type="text" class="form-control" placeholder="Office">
+    </div>
+    <div class="input-group">
+      <span class="input-group-prepend" id="basic-addon5"><label class="input-group-text"><i class="icofont icofont-user"></i></label></span>
+      <input type="number" class="form-control" placeholder="Age">
+    </div>
+    <div class="input-group">
+      <span class="input-group-prepend" id="basic-addon6"><label class="input-group-text"><i class="icofont icofont-user"></i></label></span>
+      <input type="text" class="form-control" placeholder="Phone Number">
+    </div>
+    <div class="input-group">
+      <span class="input-group-prepend" id="basic-addon7"><label class="input-group-text"><i class="icofont icofont-user"></i></label></span>
+      <input id="dropper-default" class="form-control" type="text" placeholder="Select Your Birth Date" readonly="readonly">
+    </div>
+    <button type="button" class="btn btn-primary waves-effect m-r-20 f-w-600 d-inline-block">Save</button>
+    <button (click)="closeMyModal($event)" class="btn btn-danger waves-effect m-r-20 f-w-600 md-close d-inline-block">Close</button>
+  </div>
+  <button (click)="closeMyModal($event)" aria-label="Close" class="md-close-btn"><i class="icofont icofont-ui-close"></i></button>
+</app-modal-animation>
+
+<app-modal-basic #modalDefault>
+  <div class="app-modal-header">
+    <h4 class="modal-title"># {{ userID }} - {{ userName }} Details</h4>
+    <button type="button" class="close basic-close" (click)="modalDefault.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="app-modal-body text-center">
+    <img src="{{userProPic}}" alt="{{userName}}" class="img-fluid img-thumbnail m-b-20">
+
+    <span class="text-primary d-block text-center">
+      <span *ngIf="userAge > 45">
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+      </span>
+      <span *ngIf="userAge <= 45 && userAge > 25">
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+      </span>
+      <span *ngIf="userAge <= 25">
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+      </span>
+    </span>
+    <table class="table table-striped text-left m-t-20">
+      <tr>
+        <td>Name :</td>
+        <td>{{ userName }}</td>
+      </tr>
+      <tr>
+        <td>Email :</td>
+        <td>{{ userEmail }}</td>
+      </tr>
+      <tr>
+        <td>Age :</td>
+        <td>{{ userAge }}</td>
+      </tr>
+      <tr>
+        <td>Position :</td>
+        <td>{{ userPosition }}</td>
+      </tr>
+      <tr>
+        <td>Office :</td>
+        <td>{{ userOffice }}</td>
+      </tr>
+      <tr>
+        <td>Mobile No. :</td>
+        <td>{{ userContact }}</td>
+      </tr>
+      <tr>
+        <td>Join At :</td>
+        <td>{{ userDate }}</td>
+      </tr>
+    </table>
+
+  </div>
+  <div class="app-modal-footer">
+    <button type="button" class="btn btn-default waves-effect" (click)="modalDefault.hide()">Close</button>
+    <button type="button" class="btn btn-primary waves-effect waves-light ">Save changes</button>
+  </div>
+</app-modal-basic>

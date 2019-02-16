@@ -1,0 +1,61 @@
+//=== wizard
+.ngx-form-wizard {
+  .nav-item{
+    a.nav-link {
+      background: #eee;
+      color: #aaa;
+      margin: 0 0.5em 0.5em;
+      padding: 1em 1em;
+      border-radius: 5px;
+      &.active{
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+  .nav-tabs{
+    border-bottom: none;
+  }
+  .tab-pane{
+    border: 1px solid $theme-border;
+    padding: 20px;
+    margin: 8px;
+    border-radius: 5px;
+  }
+}
+.arc-wizard {
+  &.arc-custom {
+    .steps-indicator li:after {
+      border-radius: 5px !important;
+    }
+  }
+  .centered-content {
+    text-align: center;
+  }
+  .wizard-steps{
+    border-radius: 5px;
+    border:1px solid $theme-border;
+    padding: 20px;
+  }
+
+  .small ul.steps-indicator li.current:after,
+  .small ul.steps-indicator li.editing:after {
+    background-color: $primary-color !important;
+  }
+
+  .large-filled-symbols ul.steps-indicator li.current:after,
+  .large-filled-symbols ul.steps-indicator li.editing:after {
+    background-color: $primary-color !important;
+    color: #fff !important;
+  }
+
+  .large-filled-symbols ul.steps-indicator li.done:after {
+    color: #fff !important;
+  }
+
+  .large-empty-symbols ul.steps-indicator li.current:after,
+  .large-empty-symbols ul.steps-indicator li.editing:after {
+    border-color: $primary-color !important;
+    color: $primary-color !important;
+  }
+}

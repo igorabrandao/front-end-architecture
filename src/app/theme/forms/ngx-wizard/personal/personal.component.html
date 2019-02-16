@@ -1,0 +1,37 @@
+<!-- Personal Tab Form Starts -->
+<form #personalForm="ngForm" class="editForm" novalidate>
+    <div class="tab-pane active">
+        <h4 class="head text-center">{{title}}</h4>
+        <br/>
+        <div class='row'>
+            <div class='col-12'>
+                <div class="row">
+                    <div class='col-12 col-sm-6'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="firstname">First Name</label>
+                            <input class="form-control input-md" #firstname="ngModel" required id="firstname" name="firstname" type="text"  [(ngModel)]="personal.firstName">
+                            <small class="form-text text-danger" *ngIf="!firstname.valid && (firstname.dirty || firstname.touched)">This field is required!</small>
+                        </div>
+                    </div>
+                    <div class='col-12 col-sm-6'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="lastname">Last Name</label>
+                            <input class="form-control input-md" #lastname="ngModel" required id="lastname" name="lastname" type="text"  [(ngModel)]="personal.lastName">
+                            <small class="form-text text-danger" *ngIf="!lastname.valid && (lastname.dirty || lastname.touched)">This field is required!</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="email">Email</label>
+                    <input class="form-control input-md" #email="ngModel" required email id="email" name="email" type="text"  [(ngModel)]="personal.email">
+                    <small class="form-text text-danger" *ngIf="!email.valid && (email.dirty || email.touched)">Please enter a valid email!</small>
+                </div>
+
+                <div class="form-group text-center">
+                    <button type="button" uiSref="work" class="btn btn-success btn-raised" [disabled]="!personalForm.valid" (click)="save(personalForm)"> Next <span style="margin-left:10px;"><i class="feather icon-chevron-right"></i></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Personal Tab Form Ends -->

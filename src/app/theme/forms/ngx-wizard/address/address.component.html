@@ -1,0 +1,50 @@
+<!-- Address Tab form Starts -->
+<form #addressForm="ngForm" class="editForm" novalidate>
+    <div class="tab-pane active">
+        <h4 class="head text-center">{{title}}</h4>
+        <br/>
+        <div class='row'>
+            <div class='col-sm-12'>
+                <div class="form-group">
+                    <label class="form-control-label" for="street">Street Address</label>
+                    <input class="form-control input-md" #street="ngModel" required id="street" name="street" type="text"  [(ngModel)]="address.street">
+                    <small class="form-text text-danger" *ngIf="!street.valid && (street.dirty || street.touched)">This field is required!</small>
+
+                </div>
+                <div class="row">
+                    <div class='col-12 col-sm-4'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="city">City</label>
+                            <input class="form-control input-md" #city="ngModel" required id="city" name="city" type="text"  [(ngModel)]="address.city">
+                            <small class="form-text text-danger" *ngIf="!city.valid && (city.dirty || city.touched)">This field is required!</small>
+
+                        </div>
+                    </div>
+                    <div class='col-4 col-sm-offset-1 col-sm-3'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="state">State</label>
+                            <input class="form-control input-md" #state="ngModel" required id="state" name="state" type="text"  [(ngModel)]="address.state">
+                            <small class="form-text text-danger" *ngIf="!state.valid && (state.dirty || state.touched)">This field is required!</small>
+
+                        </div>
+                    </div>
+                    <div class='col-offset-1 col-7 col-sm-offset-1 col-sm-3'>
+                        <div class="form-group">
+                            <label class="form-control-label" for="zip">Zip</label>
+                            <input class="form-control input-md" #zip="ngModel" required id="zip" name="zip" type="text"  [(ngModel)]="address.zip">
+                            <small class="form-text text-danger" *ngIf="!zip.valid && (zip.dirty || zip.touched)">This field is required!</small>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group text-center">
+                    <button uiSref="work" type="button" class="btn btn-raised btn-secondary" (click)="cancel()"> <span style="margin-right:10px;"><i class="feather icon-chevron-left"></i></span> Previous</button>
+                    <button uiSref="result" type="button" class="btn btn-raised btn-info" [disabled]="!addressForm.valid" (click)="save(addressForm)"> Next <span style="margin-left:10px;"><i class="feather icon-chevron-right"></i></span></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+<!-- Address Tab form Ends -->

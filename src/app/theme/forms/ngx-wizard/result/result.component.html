@@ -1,0 +1,58 @@
+<!-- Result tab Form starts -->
+<div class="tab-pane active">
+    <h3 class="head text-center">{{title}}</h3>
+
+    <p class="narrow text-center">
+        Here is a copy of the information you have entered:
+    </p>
+    <div class='row'>
+        <div class='col-offset-1 col-10 col-sm-offset-3 col-sm-8 col-md-offset-4 col-md-8'>
+            <div class="row">
+                <div class='col-3 col-sm-2'>
+                    <div class="form-group">
+                        <label class="form-control-label">Name: </label>
+                    </div>
+                </div>
+                <div class='col-9 col-sm-10'>
+                    {{formData.firstName + ' ' + formData.lastName}}
+                </div>
+            </div>
+            <div class="row">
+                <div class='col-3 col-sm-2'>
+                    <div class="form-group">
+                        <label class="form-control-label">Email: </label>
+                    </div>
+                </div>
+                <div class='col-9 col-sm-10'>
+                    {{formData.email}}
+                </div>
+           </div>
+            <div class="row">
+                <div class='col-3 col-sm-2'>
+                    <div class="form-group">
+                        <label class="form-control-label">Work: </label>
+                    </div>
+                </div>
+                <div class='col-9 col-sm-10'>
+                    {{formData.work}}
+                </div>
+           </div>
+           <div class="row">
+                <div class='col-3 col-sm-2'>
+                    <div class="form-group">
+                        <label class="form-control-label">Address: </label>
+                    </div>
+                </div>
+                <div class='col-9 col-sm-10'>
+                    {{formData.street}}
+                    <br/>
+                    {{formData.city + ' ' + formData.state + ' ' + formData.zip}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <button uiSref="personal" class="btn btn-success btn-raised" [disabled]="!isFormValid" (click)="submit()"> Submit <span style="margin-left:10px;"><i class="feather icon-arrow-right"></i></span></button>
+    </div>
+</div>
+<!-- Result tab Form ends -->

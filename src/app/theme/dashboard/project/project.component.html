@@ -1,0 +1,479 @@
+<div class="page-body">
+  <div class="row">
+
+    <!-- customer project  start -->
+    <div class="col-xl-3 col-md-6">
+      <div class="card">
+        <div class="card-block">
+          <div class="row align-items-center m-l-0">
+            <div class="col-auto">
+              <i class="fa fa-book f-30 text-c-purple"></i>
+            </div>
+            <div class="col-auto">
+              <h6 class="text-muted m-b-10">Tickets Answered</h6>
+              <h2 class="m-b-0">379</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="card">
+        <div class="card-block">
+          <div class="row align-items-center m-l-0">
+            <div class="col-auto">
+              <i class="fa fa-rocket f-30 text-c-green"></i>
+            </div>
+            <div class="col-auto">
+              <h6 class="text-muted m-b-10">Projects Launched</h6>
+              <h2 class="m-b-0">205</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="card">
+        <div class="card-block">
+          <div class="row align-items-center m-l-0">
+            <div class="col-auto">
+              <i class="fa fa-user f-30 text-c-red"></i>
+            </div>
+            <div class="col-auto">
+              <h6 class="text-muted m-b-10">Happy Customers</h6>
+              <h2 class="m-b-0">5984</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="card">
+        <div class="card-block">
+          <div class="row align-items-center m-l-0">
+            <div class="col-auto">
+              <i class="fa fa-lightbulb-o f-30 text-c-blue"></i>
+            </div>
+            <div class="col-auto">
+              <h6 class="text-muted m-b-10">Unique Innovation</h6>
+              <h2 class="m-b-0">325</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- customer project  end -->
+
+    <!--  sale analytics start -->
+    <div class="col-xl-9 col-md-12">
+      <app-card [title]="'Sales Analytics'">
+        <div id="sales-analytics" [style.height]="'445px'"></div>
+      </app-card>
+    </div>
+    <div class="col-xl-3 col-md-12">
+      <div class="card user-card2">
+        <div class="card-block text-center">
+          <h6 class="m-b-15">Project Risk</h6>
+          <div class="risk-rate">
+            <span><b>5</b></span>
+          </div>
+          <h6 class="m-b-10 m-t-10">Balanced</h6>
+          <a href="javascript:" class="text-c-blue b-b-primary">Change Your Risk</a>
+          <div class="row justify-content-center m-t-10 b-t-default m-l-0 m-r-0">
+            <div class="col m-t-15 b-r-default">
+              <h6 class="text-muted">Nr</h6>
+              <h6>AWS 2455</h6>
+            </div>
+            <div class="col m-t-15">
+              <h6 class="text-muted">Created</h6>
+              <h6>30th Sep</h6>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block ripple light">Download Overall Report</button>
+      </div>
+      <div class="card">
+        <div class="card-block">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h4 class="text-c-red">145</h4>
+              <h6 class="text-muted m-b-0">Task Completed</h6>
+            </div>
+            <div class="col-4 text-right">
+              <i class="fa fa-calendar-check-o f-28"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer bg-c-red">
+          <div class="row align-items-center">
+            <div class="col-9">
+              <p class="text-white m-b-0">% change</p>
+            </div>
+            <div class="col-3 text-right">
+              <i class="fa fa-line-chart text-white f-16"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- user end -->
+
+    <div class="col-xl-4 col-md-12">
+      <app-card [title]="'Tasks'" [cardClass]="'task-card'">
+        <ul class="list-unstyled task-list">
+          <li>
+            <i class="fa fa-check task-icon bg-c-green"></i>
+            <p class="m-b-5">8:50</p>
+            <h6 class="text-muted">Call to customer <span class="text-c-blue">Jacob</span> and discuss the</h6>
+          </li>
+          <li>
+            <i class="task-icon bg-c-blue"></i>
+            <p class="m-b-5">Sat, 5 Mar</p>
+            <h6 class="text-muted">Design mobile Application</h6>
+          </li>
+          <li>
+            <i class="task-icon bg-c-red"></i>
+            <p class="m-b-5">Sun, 17 Feb</p>
+            <h6 class="text-muted"><span class="text-c-blue">Jeny</span> assign you a task <span class="text-c-blue">Mockup Design.</span></h6>
+          </li>
+          <li class="p-b-10">
+            <i class="task-icon bg-c-blue"></i>
+            <p class="m-b-5">Sat, 29 Mar</p>
+            <h6 class="text-muted">Design mobile Application</h6>
+          </li>
+        </ul>
+        <div class="text-center">
+          <a href="javascript:" class="b-b-primary text-primary">View Friend List</a>
+        </div>
+      </app-card>
+    </div>
+    <div class="col-xl-8 col-md-12">
+      <app-card [title]="'Project Status'" [cardClass]="'table-card'">
+        <div class="table-responsive">
+          <table class="table table-hover table-borderless">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Project</th>
+              <th>Status</th>
+              <th>Progress</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>562</td>
+              <td>Mega Able Admin Theme</td>
+              <td><label class="label label-primary">Developing</label></td>
+              <td>
+                <div [style.width]="'75px'"><chart id="project-status1" [type]="'pie'" [data]="projectStatus1Data" [options]="projectStatusOption"></chart></div>
+              </td>
+            </tr>
+            <tr>
+              <td>563</td>
+              <td>Flatable Template</td>
+              <td><label class="label label-success">Design</label></td>
+              <td>
+                <div [style.width]="'75px'"><chart id="project-status2" [type]="'pie'" [data]="projectStatus2Data" [options]="projectStatusOption"></chart></div>
+              </td>
+            </tr>
+            <tr>
+              <td>564</td>
+              <td>Guruable Admin Panel</td>
+              <td><label class="label label-danger">Testing</label></td>
+              <td>
+                <div [style.width]="'75px'"><chart id="project-status3" [type]="'pie'" [data]="projectStatus3Data" [options]="projectStatusOption"></chart></div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="text-right m-r-20">
+            <a href="javascript:" class=" b-b-primary text-primary">View all Projects</a>
+          </div>
+        </div>
+      </app-card>
+    </div>
+
+    <!-- data & project and visit start -->
+    <div class="col-xl-8 col-md-12">
+      <app-card [title]="'Projects'" [cardClass]="'table-card'">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+            <tr>
+              <th>
+                <div class="chk-option">
+                  <div class="checkbox-fade fade-in-primary">
+                    <label class="check-task">
+                      <input type="checkbox" value="">
+                      <span class="cr"><i class="cr-icon fa fa-check txt-default"></i></span>
+                    </label>
+                  </div>
+                </div>
+                Assigned</th>
+              <th>Name</th>
+              <th>Due Date</th>
+              <th class="text-right">Priority</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                <div class="chk-option">
+                  <div class="checkbox-fade fade-in-primary">
+                    <label class="check-task">
+                      <input type="checkbox" value="">
+                      <span class="cr"><i class="cr-icon fa fa-check txt-default"></i></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="d-inline-block align-middle">
+                  <img src="assets/images/avatar-4.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
+                  <div class="d-inline-block">
+                    <h6>John Deo</h6>
+                    <p class="text-muted m-b-0">Graphics Designer</p>
+                  </div>
+                </div>
+              </td>
+              <td>Mega Able</td>
+              <td>Jun, 26</td>
+              <td class="text-right"><label class="label label-danger">Low</label></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="chk-option">
+                  <div class="checkbox-fade fade-in-primary">
+                    <label class="check-task">
+                      <input type="checkbox" value="">
+                      <span class="cr"><i class="cr-icon fa fa-check txt-default"></i></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="d-inline-block align-middle">
+                  <img src="assets/images/avatar-5.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
+                  <div class="d-inline-block">
+                    <h6>Jenifer Vintage</h6>
+                    <p class="text-muted m-b-0">Web Designer</p>
+                  </div>
+                </div>
+              </td>
+              <td>Mashable</td>
+              <td>March, 31</td>
+              <td class="text-right"><label class="label label-primary">high</label></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="chk-option">
+                  <div class="checkbox-fade fade-in-primary">
+                    <label class="check-task">
+                      <input type="checkbox" value="">
+                      <span class="cr"><i class="cr-icon fa fa-check txt-default"></i></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="d-inline-block align-middle">
+                  <img src="assets/images/avatar-3.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
+                  <div class="d-inline-block">
+                    <h6>William Jem</h6>
+                    <p class="text-muted m-b-0">Developer</p>
+                  </div>
+                </div>
+              </td>
+              <td>Flatable</td>
+              <td>Aug, 02</td>
+              <td class="text-right"><label class="label label-success">medium</label></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="chk-option">
+                  <div class="checkbox-fade fade-in-primary">
+                    <label class="check-task">
+                      <input type="checkbox" value="">
+                      <span class="cr"><i class="cr-icon fa fa-check txt-default"></i></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="d-inline-block align-middle">
+                  <img src="assets/images/avatar-2.jpg" alt="user image" class="img-radius img-40 align-top m-r-15">
+                  <div class="d-inline-block">
+                    <h6>David Jones</h6>
+                    <p class="text-muted m-b-0">Developer</p>
+                  </div>
+                </div>
+              </td>
+              <td>Guruable</td>
+              <td>Sep, 22</td>
+              <td class="text-right"><label class="label label-primary">high</label></td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="text-right m-r-20">
+            <a href="javascript:" class=" b-b-primary text-primary">View all Projects</a>
+          </div>
+        </div>
+      </app-card>
+    </div>
+    <div class="col-xl-4 col-md-12">
+      <div class="card">
+        <div class="card-block bg-c-blue">
+          <div id="project-earning" [style.height]="'200px'"></div>
+        </div>
+        <div class="card-footer">
+          <h6 class="text-muted m-b-30 m-t-15">Total completed project and earning</h6>
+          <div class="row text-center">
+            <div class="col-6 b-r-default">
+              <h6 class="text-muted m-b-10">Completed Projects</h6>
+              <h3 class="m-b-0">175</h3>
+            </div>
+            <div class="col-6">
+              <h6 class="text-muted m-b-10">Total Earnings</h6>
+              <h3 class="m-b-0">76.6M</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-block">
+          <div class="row align-items-center m-l-0">
+            <div class="col-auto">
+              <i class="fa fa-rocket f-30 text-c-green"></i>
+            </div>
+            <div class="col-auto">
+              <h6 class="text-muted m-b-10">Projects Launched</h6>
+              <h2 class="m-b-0">205</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- data & project and visit end -->
+
+    <div class="col-xl-6 col-md-12">
+      <app-card [title]="'To Do List'" [blockClass]="'widget-last-task'">
+        <div class="to-do-list">
+          <div class="checkbox-fade fade-in-default">
+            <label class="check-task">
+              <input type="checkbox" value="" appToDoListRead>
+              <span class="cr"><i class="cr-icon fa fa-check txt-default"></i></span>
+              <span>Check your Email</span>
+            </label>
+          </div>
+          <div class="f-right">
+            <a href="javascript:" class="delete_todolist" appToDoListRemove><i class="fa fa-trash"></i></a>
+          </div>
+        </div>
+        <div class="to-do-list">
+          <div class="checkbox-fade fade-in-default">
+            <label class="check-task done-task">
+              <input type="checkbox" value="" checked appToDoListRead>
+              <span class="cr"><i class="cr-icon fa fa-check txt-default"></i></span>
+              <span>Make YouTube Video</span>
+            </label>
+          </div>
+          <div class="f-right">
+            <a href="javascript:" class="delete_todolist" appToDoListRemove><i class="fa fa-trash"></i></a>
+          </div>
+        </div>
+        <div class="to-do-list">
+          <div class="checkbox-fade fade-in-default">
+            <label class="check-task">
+              <input type="checkbox" value="" appToDoListRead>
+              <span class="cr"><i class="cr-icon fa fa-check txt-default"></i></span>
+              <span>Create Banner</span>
+            </label>
+          </div>
+          <div class="f-right">
+            <a href="javascript:" class="delete_todolist" appToDoListRemove><i class="fa fa-trash"></i></a>
+          </div>
+        </div>
+        <div class="to-do-list">
+          <div class="checkbox-fade fade-in-default">
+            <label class="check-task">
+              <input type="checkbox" value="" appToDoListRead>
+              <span class="cr"><i class="cr-icon fa fa-check txt-default"></i></span>
+              <span>Upload Project</span>
+            </label>
+          </div>
+          <div class="f-right">
+            <a href="javascript:" class="delete_todolist" appToDoListRemove><i class="fa fa-trash"></i></a>
+          </div>
+        </div>
+        <div class="right-icon-control">
+          <form class="form-material" action="javascript:">
+            <div class="form-group form-primary">
+              <input type="text" name="footer-email" class="form-control" required="">
+              <span class="form-bar"></span>
+              <label class="float-label">Add Task</label>
+            </div>
+          </form>
+          <div class="form-icon ">
+            <button class="btn btn-primary btn-icon ripple light">
+              <i class="fa fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </app-card>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <app-card [title]="'My Projects'" [blockClass]="'widget-last-task'">
+        <p class="m-b-10">New Dashboard <span class="f-right">5 Mins ago</span></p>
+        <ul class="list-unstyled m-b-25">
+          <li class="d-inline-block"><img src="assets/images/avatar-5.jpg" alt="user-image" class="img-radius img-30 m-r-15"></li>
+          <li class="d-inline-block"><img src="assets/images/avatar-1.jpg" alt="user-image" class="img-radius img-30 m-r-15"></li>
+          <li class="d-inline-block"><img src="assets/images/avatar-2.jpg" alt="user-image" class="img-radius img-30 m-r-15"></li>
+          <li class="d-inline-block"><img src="assets/images/avatar-3.jpg" alt="user-image" class="img-radius img-30 m-r-15"></li>
+        </ul>
+        <p class="m-b-10 ">Web Design <span class="f-right">8 Mins ago</span></p>
+        <ul class="list-unstyled  m-b-25">
+          <li class="d-inline-block"><img src="assets/images/avatar-5.jpg" alt="user-image" class="img-radius img-30 m-r-15"></li>
+          <li class="d-inline-block"><img src="assets/images/avatar-2.jpg" alt="user-image" class="img-radius img-30 m-r-15"></li>
+          <li class="d-inline-block"><img src="assets/images/avatar-3.jpg" alt="user-image" class="img-radius img-30 m-r-15"></li>
+        </ul>
+        <p class="m-b-10">Android Design <span class="f-right">12 Mins ago</span></p>
+        <ul class="list-unstyled">
+          <li class="d-inline-block"><img src="assets/images/avatar-4.jpg" alt="user-image" class="img-radius img-30 m-r-15"></li>
+          <li class="d-inline-block"><img src="assets/images/avatar-2.jpg" alt="user-image" class="img-radius img-30 m-r-15"></li>
+          <li class="d-inline-block"><img src="assets/images/avatar-3.jpg" alt="user-image" class="img-radius img-30 m-r-15"></li>
+        </ul>
+        <div class="right-icon-control m-t-15">
+          <form class="form-material" action="javascript:">
+            <div class="form-group form-primary">
+              <input name="footer-email" class="form-control" required="">
+              <span class="form-bar"></span>
+              <label class="float-label">Add Project</label>
+            </div>
+          </form>
+          <div class="form-icon ">
+            <button class="btn btn-primary btn-icon ripple light">
+              <i class="fa fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </app-card>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <app-card [title]="'Traffic Sources'" [cardClass]="'trafic-card'">
+        <p class="m-b-10">Direct <span class="f-right"><i class="fa fa-caret-up m-r-10"></i>25%</span></p>
+        <div class="progress blue">
+          <div class="progress-bar bg-c-blue" [style.width]="'75%'"></div>
+        </div>
+        <p class="m-b-10 m-t-30">Social <span class="f-right"><i class="fa fa-caret-down m-r-10"></i>58</span></p>
+        <div class="progress green">
+          <div class="progress-bar bg-c-green" [style.width]="'50%'"></div>
+        </div>
+        <p class="m-b-10 m-t-30">Referral <span class="f-right"><i class="fa fa-caret-up m-r-10"></i>20%</span></p>
+        <div class="progress red">
+          <div class="progress-bar bg-c-red" [style.width]="'20%'"></div>
+        </div>
+        <p class="m-b-10 m-t-30">Bounce <span class="f-right"><i class="fa fa-caret-down m-r-10"></i>580</span></p>
+        <div class="progress yellow">
+          <div class="progress-bar bg-c-yellow" [style.width]="'40%'"></div>
+        </div>
+        <p class="m-b-10 m-t-30">Internet <span class="f-right"><i class="fa fa-caret-up m-r-10"></i>70%</span></p>
+        <div class="progress purple">
+          <div class="progress-bar bg-c-purple" [style.width]="'90%'"></div>
+        </div>
+      </app-card>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<div class="page-body">
+  <div class="card">
+    <!-- Email-card start -->
+    <div class="card-block email-card">
+      <div class="row">
+        <div class="col-lg-12 col-xl-3">
+          <div class="user-head row">
+            <div class="user-face">
+              <img class="img-fluid" src="assets/images/logo.png" alt="Theme-Logo" />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 col-xl-9">
+          <div class="mail-box-head row justify-content-end">
+            <div class="col-auto">
+              <form class="form-material" action="javascript:">
+                <div class="material-group">
+                  <div class="form-group form-default">
+                    <input type="text" name="footer-email" class="form-control" required="">
+                    <span class="form-bar"></span>
+                    <label class="float-label">Search</label>
+                  </div>
+                  <div class="material-addone">
+                    <i class="icofont icofont-search"></i>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Left-side section start -->
+        <div class="col-lg-12 col-xl-3">
+          <div class="user-body">
+            <div class="p-20 text-center">
+              <a [routerLink]="['/email/email-compose/']" class="btn btn-danger waves-effect">Compose</a>
+            </div>
+            <ul class="page-list nav nav-tabs flex-column" id="pills-tab" role="tablist">
+              <li class="nav-item mail-section">
+                <a [routerLinkActive]="['active']" class="nav-link waves-effect d-block active" [routerLink]="['/email/email-inbox/e-main/']" data-toggle="pill" role="tab">
+                  <i class="icofont icofont-inbox"></i> Inbox
+                  <span class="label label-primary float-right">6</span>
+                </a>
+              </li>
+              <li class="nav-item mail-section">
+                <a [routerLinkActive]="['active']" class="nav-link waves-effect d-block" data-toggle="pill" [routerLink]="['/email/email-inbox/e-starred/']" role="tab">
+                  <i class="icofont icofont-star"></i> Starred
+                </a>
+              </li>
+              <li class="nav-item mail-section">
+                <a [routerLinkActive]="['active']" class="nav-link waves-effect d-block" data-toggle="pill" [routerLink]="['/email/email-inbox/e-drafts/']" role="tab">
+                  <i class="icofont icofont-file-text"></i> Drafts
+                </a>
+              </li>
+              <li class="nav-item mail-section">
+                <a [routerLinkActive]="['active']" class="nav-link waves-effect d-block" data-toggle="pill" [routerLink]="['/email/email-inbox/e-sent/']" role="tab">
+                  <i class="icofont icofont-paper-plane"></i> Sent Mail
+                </a>
+              </li>
+              <li class="nav-item mail-section">
+                <a [routerLinkActive]="['active']" class="nav-link waves-effect d-block" data-toggle="pill" [routerLink]="['/email/email-inbox/e-trash/']" role="tab">
+                  <i class="icofont icofont-ui-delete"></i> Trash
+                  <span class="label label-info float-right">30</span>
+                </a>
+              </li>
+            </ul>
+            <ul class="p-20 label-list">
+              <li>
+                <h5>Labels</h5>
+              </li>
+              <li>
+                <a class="mail-work" href="javascript:">Work</a>
+              </li>
+              <li>
+                <a class="mail-design" href="javascript:">Design</a>
+              </li>
+              <li>
+                <a class="mail-family" href="javascript:">Family</a>
+              </li>
+              <li>
+                <a class="mail-friends" href="javascript:">Friends</a>
+              </li>
+              <li>
+                <a class="mail-office" href="javascript:">Office</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Left-side section end -->
+        <!-- Right-side section start -->
+        <div class="col-lg-12 col-xl-9">
+          <div class="tab-content" id="pills-tabContent">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+        <!-- Right-side section end -->
+      </div>
+    </div>
+    <!-- Email-card end -->
+  </div>
+</div>

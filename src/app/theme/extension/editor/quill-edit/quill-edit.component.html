@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-12">
+    <app-card [title]="'Quill Basic Editor'" [classHeader]="true">
+      <span class="code-header">use options with <code>quill-editor</code> elements</span>
+      <quill-editor
+        [(ngModel)]="editorContent"
+        [options]="editorConfig"
+        (blur)="onEditorBlured($event)"
+        (focus)="onEditorFocused($event)"
+        (ready)="onEditorCreated($event)"
+        (change)="onContentChanged($event)">
+      </quill-editor>
+    </app-card>
+  </div>
+</div>

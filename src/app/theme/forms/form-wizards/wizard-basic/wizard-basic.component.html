@@ -1,0 +1,55 @@
+<app-card [title]="'Basic Wizard'">
+  <wizard #wizard class="arc-wizard">
+    <wizard-step stepTitle="Profile">
+      <div class="centered-content">
+        <div>
+          <h3>Content: Profile</h3>
+          <p>small nav filled without symbol / default</p>
+        </div>
+
+        <div class="btn-group mt-10">
+          <button type="button" class="btn btn-primary btn-sm" nextStep>Continue</button>
+        </div>
+      </div>
+    </wizard-step>
+    <wizard-step stepTitle="Work">
+      <div class="centered-content">
+        <div>
+          <h3>Content: Work</h3>
+          <p>small nav filled without symbol / default</p>
+        </div>
+
+        <div class="btn-group mt-10">
+          <button type="button" class="btn btn-secondary btn-sm" previousStep>Back</button>
+          <button type="button" class="btn btn-primary btn-sm" nextStep>Continue</button>
+        </div>
+      </div>
+    </wizard-step>
+    <wizard-step stepTitle="Address">
+      <div class="centered-content">
+        <div>
+          <h3>Content: Address</h3>
+          <p>small nav filled without symbol / default</p>
+        </div>
+
+        <div class="btn-group mt-10">
+          <button type="button" class="btn btn-secondary btn-sm" previousStep>Back</button>
+          <button type="button" class="btn btn-primary btn-sm" nextStep>Continue</button>
+        </div>
+      </div>
+    </wizard-step>
+    <wizard-step stepTitle="Finished">
+      <div class="centered-content">
+        <div>
+          <h3>Thank's</h3>
+          <p>Neque porro quisquam est qui dolorem </p>
+        </div>
+
+        <div class="btn-group mt-10">
+          <button type="button" class="btn btn-secondary btn-sm" previousStep>Back</button>
+          <button type="button" class="btn btn-danger btn-sm" resetWizard>Reset</button>
+        </div>
+      </div>
+    </wizard-step>
+  </wizard>
+</app-card>

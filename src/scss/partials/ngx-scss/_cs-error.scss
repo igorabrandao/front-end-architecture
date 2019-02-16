@@ -1,0 +1,89 @@
+.error-400, .error-403, .error-404, .error-500, .error-503 {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+}
+
+.error-400 h1, .error-403 h1, .error-404 h1, .error-500 h1, .error-503 h1 {
+  padding: 0;
+  margin-bottom: 40px;
+  font-size: 210px;
+  font-weight: 900;
+  line-height: 210px;
+  color: $inverse-color;
+}
+
+.error-400 h5, .error-403 h5, .error-404 h5, .error-500 h5, .error-503 h5 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  color: $primary-color;
+}
+
+.coming {
+  background: transparent url("../assets/images/master-home.jpg") no-repeat;
+  background-size: cover;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.comming-soon {
+  text-align: center;
+  color: #fff;
+}
+
+.comming-soon h1 {
+  font-size: 54px;
+  font-weight: 600;
+}
+
+.comming-soon p {
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.coming-social {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.comming-soon .timer .time {
+  font-size: 90px;
+  color: #fff;
+}
+
+.comming-soon .timer .text {
+  font-size: 24px;
+  font-weight: 400;
+  color: $primary-color;
+}
+
+.coming-social a {
+  margin-right: 20px;
+  color: #fff;
+  font-size: 30px;
+}
+
+.mb70 {
+  margin-bottom: 70px;
+}
+
+.mb50 {
+  margin-bottom: 50px;
+}
