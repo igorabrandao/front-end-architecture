@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to mega-able-v7.2.2!');
+    expect(page.getTitleText()).toEqual('Welcome to front-end-architecture!');
   });
 
   afterEach(async () => {

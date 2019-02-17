@@ -6,8 +6,9 @@ import {NavigationEnd, Router} from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit {
-  title = 'Mega Able 5+';
+  title = 'Front-end architecture 5+';
 
   constructor(private router: Router) { }
 
