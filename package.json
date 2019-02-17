@@ -1,6 +1,6 @@
 {
-  "name": "mega-able-v7.2.2",
-  "version": "0.0.0",
+  "name": "front-end-architecture",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mega-able-v7.2.2": {
+    "front-end-architecture": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mega-able-v7.2.2",
+            "outputPath": "dist/front-end-architecture",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mega-able-v7.2.2:build"
+            "browserTarget": "front-end-architecture:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mega-able-v7.2.2:build:production"
+              "browserTarget": "front-end-architecture:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mega-able-v7.2.2:build"
+            "browserTarget": "front-end-architecture:build"
           }
         },
         "test": {
@@ -108,7 +108,7 @@
         }
       }
     },
-    "mega-able-v7.2.2-e2e": {
+    "front-end-architecture-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -117,11 +117,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mega-able-v7.2.2:serve"
+            "devServerTarget": "front-end-architecture:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mega-able-v7.2.2:serve:production"
+              "devServerTarget": "front-end-architecture:serve:production"
             }
           }
         },
@@ -137,5 +137,5 @@
       }
     }
   },
-  "defaultProject": "mega-able-v7.2.2"
+  "defaultProject": "front-end-architecture"
 }
