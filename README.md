@@ -1,10 +1,30 @@
 # Front-end Architecture
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
+**Welcome aboard!** :bowtie:
+
+This project represents a dream, the dream to connect good people and make good things happen.
+
+As you may already know, nobody makes things happen alone and it's not different for me, that's why I'm inviting you to make part of this great team and make difference in the open source community.
+
+So make yourself comfortable to contribute!
+
+[Project Trello Board](https://trello.com/b/KrXoAalj/front-end-architecture)
 
 ## Development server
 
+First of all, clone the project to your computer:
+
+    git clone https://github.com/igorabrandao/front-end-architecture.git
+    
+After that navigate to the project folder and install the dependencies:
+
+    npm install
+    
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+#### Note
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
 
 ## Code scaffolding
 
