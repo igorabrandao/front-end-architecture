@@ -6,9 +6,11 @@ import { Deserializable } from "./deserializable.model";
 export class User implements Deserializable {
     // Attributes (just examples)
     id: number;
-    name: string;
-    email: string;
+    username: string;
     password: string;
+    firstName: string;
+    lastName: string;
+    token: string;
 
     // Deserialize interface
     deserialize(input: any) {
