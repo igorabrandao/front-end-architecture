@@ -11,6 +11,8 @@ import { SharedModule } from './shared/shared.module';
 import { MenuItems } from './shared/menu-items/menu-items';
 import { BreadcrumbsComponent } from './layout/admin/breadcrumbs/breadcrumbs.component';
 
+// API Providers
+import { TokenInterceptorModule } from './core/auth/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { BreadcrumbsComponent } from './layout/admin/breadcrumbs/breadcrumbs.com
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    TokenInterceptorModule,
     SharedModule
   ],
   providers: [MenuItems],
