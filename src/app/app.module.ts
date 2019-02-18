@@ -11,8 +11,9 @@ import { SharedModule } from './shared/shared.module';
 import { MenuItems } from './shared/menu-items/menu-items';
 import { BreadcrumbsComponent } from './layout/admin/breadcrumbs/breadcrumbs.component';
 
-// API Providers
+// API Handlers
 import { TokenInterceptorModule } from './core/auth/token.interceptor';
+import { HttpErrorHandler } from'./core/error/http-error-handler.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { TokenInterceptorModule } from './core/auth/token.interceptor';
     TokenInterceptorModule,
     SharedModule
   ],
-  providers: [MenuItems],
+  providers: [MenuItems, HttpErrorHandler],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
