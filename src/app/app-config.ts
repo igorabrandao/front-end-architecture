@@ -25,4 +25,10 @@ export class AppSettings {
    * sandbox: '<URL_HERE>'
    */
   public API_URL: string = '<URL_HERE>';
+
+  /**
+   * Define how many times an API operation is retried
+   * in case of fail
+   */
+  public API_CONNECTION_RETRY: number = 3;
 }
