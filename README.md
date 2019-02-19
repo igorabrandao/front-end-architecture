@@ -10,7 +10,7 @@ So make yourself comfortable to contribute!
 
 ## How to contribute
 
-Take a look in our [contribution guidelines](https://github.com/igorabrandao/front-end-architecture/blob/master/contributing.md)
+Take a look in our [contribution guidelines](https://github.com/igorabrandao/front-end-architecture/blob/master/contributing.md).
 
 The project tasks can be find in the [project board](https://github.com/igorabrandao/front-end-architecture/projects), they are divided in the following:
 
