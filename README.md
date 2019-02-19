@@ -8,7 +8,9 @@ As you may already know, nobody makes things happen alone and it's not different
 
 So make yourself comfortable to contribute!
 
-[Project Trello Board](https://trello.com/b/KrXoAalj/front-end-architecture)
+## How to contribute
+
+Take a look in our [contribution guidelines](https://github.com/igorabrandao/front-end-architecture/blob/master/contributing.md)
 
 ## Development server
 

@@ -9,6 +9,22 @@ email,trello or any other method with the owners of this repository before makin
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
+In order to organize the project tasks, the task were identified with codes (e.g. FEA001). **Note: FEA means Front-end architecture**.
+
+If you want to help us developing these tasks (or propose new ones), please move the [project cards](https://github.com/igorabrandao/front-end-architecture/projects) related to the task from **To do** to **In progress** and create a **branch** on Github project with the same name of the task code.
+
+## Branch
+
+We follow the [git flow guidelines](https://danielkummer.github.io/git-flow-cheatsheet/index.html) in order to organize the project branchs.
+
+<p align="center">
+  <img src ="https://leanpub.com/site_images/git-flow/git-workflow-release-cycle-2feature.png" />
+</p>
+
+## Commits
+
+We follow this [commit guideline](https://github.com/igorabrandao/front-end-architecture/blob/master/commit-message-guidelines.md)
+
 ## Pull Request Process
 
 1. Ensure any install or build dependencies are removed before the end of the layer when doing a 
