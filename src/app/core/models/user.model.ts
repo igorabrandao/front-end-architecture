@@ -10,7 +10,7 @@ export class User implements Deserializable {
     password: string;
     firstName: string;
     lastName: string;
-    token: string;
+    access_token: string;
 
     // Deserialize interface
     deserialize(input: any) {

@@ -8,7 +8,7 @@ import {NavigationEnd, Router} from '@angular/router';
 })
 
 export class AppComponent implements OnInit {
-  title = 'Front-end architecture 5+';
+  title = 'Front-end architecture 7+';
 
   constructor(private router: Router) { }
 
