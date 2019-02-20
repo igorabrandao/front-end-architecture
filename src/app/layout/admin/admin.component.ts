@@ -1,6 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {animate, AUTO_STYLE, state, style, transition, trigger} from '@angular/animations';
-import {MenuItems} from '../../shared/menu-items/menu-items';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { animate, AUTO_STYLE, state, style, transition, trigger } from '@angular/animations';
+import { MenuItems } from '../../shared/menu-items/menu-items';
 
 @Component({
   selector: 'app-admin',
@@ -54,12 +54,12 @@ import {MenuItems} from '../../shared/menu-items/menu-items';
     ]),
     trigger('fadeInOutTranslate', [
       transition(':enter', [
-        style({opacity: 0}),
-        animate('400ms ease-in-out', style({opacity: 1}))
+        style({ opacity: 0 }),
+        animate('400ms ease-in-out', style({ opacity: 1 }))
       ]),
       transition(':leave', [
-        style({transform: 'translate(0)'}),
-        animate('400ms ease-in-out', style({opacity: 0}))
+        style({ transform: 'translate(0)' }),
+        animate('400ms ease-in-out', style({ opacity: 0 }))
       ])
     ]),
     trigger('mobileMenuTop', [
@@ -516,22 +516,22 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   setHeaderPosition() {
-      this.isHeaderChecked = !this.isHeaderChecked;
-      this.pcodedHeaderPosition = this.isHeaderChecked === true ? 'fixed' : 'relative';
-      this.headerFixedMargin = this.isHeaderChecked === true ? '56px' : '';
-      if (this.isHeaderChecked === false) {
-        window.addEventListener('scroll', this.scroll, true);
-        window.scrollTo(0, 0);
-      } else {
-        window.removeEventListener('scroll', this.scroll, true);
-        if (this.pcodedDeviceType === 'desktop') {
-          this.headerFixedTop = 'auto';
-        }
-        this.pcodedSidebarPosition = 'fixed';
-        if (this.verticalNavType !== 'collapsed') {
-          this.sidebarFixedHeight = this.isSidebarChecked === true ? 'calc(100vh - 56px)' : 'calc(100vh + 56px)';
-        }
+    this.isHeaderChecked = !this.isHeaderChecked;
+    this.pcodedHeaderPosition = this.isHeaderChecked === true ? 'fixed' : 'relative';
+    this.headerFixedMargin = this.isHeaderChecked === true ? '56px' : '';
+    if (this.isHeaderChecked === false) {
+      window.addEventListener('scroll', this.scroll, true);
+      window.scrollTo(0, 0);
+    } else {
+      window.removeEventListener('scroll', this.scroll, true);
+      if (this.pcodedDeviceType === 'desktop') {
+        this.headerFixedTop = 'auto';
       }
+      this.pcodedSidebarPosition = 'fixed';
+      if (this.verticalNavType !== 'collapsed') {
+        this.sidebarFixedHeight = this.isSidebarChecked === true ? 'calc(100vh - 56px)' : 'calc(100vh + 56px)';
+      }
+    }
   }
 
   toggleOpenedSidebar() {
@@ -577,5 +577,4 @@ export class AdminComponent implements OnInit, OnDestroy {
       }
     }
   }
-
 }
