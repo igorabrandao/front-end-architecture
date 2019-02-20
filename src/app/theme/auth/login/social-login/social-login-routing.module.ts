@@ -1,13 +1,13 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {SocialLoginComponent} from './social-login.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { SocialLoginComponent } from './social-login.component';
 
 const routes: Routes = [
   {
     path: '',
     component: SocialLoginComponent,
     data: {
-      title: 'Social Login'
+      title: 'Login'
     }
   }
 ];
