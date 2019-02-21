@@ -24,7 +24,7 @@ export class AppSettings {
    * production: '<URL_HERE>'
    * sandbox: '<URL_HERE>'
    */
-  public API_URL: string = '<URL_HERE>';
+  public API_URL: string = 'http://localhost:4200';
 
   /**
    * Define how many times an API operation is retried
