@@ -6,9 +6,6 @@ import { catchError } from 'rxjs/operators';
 // Import the auth service
 import { AuthenticationService } from '../services/auth.service';
 
-// Import the notification component
-import { NotificationComponent } from '../../theme/ui-elements/advance/notification/notification.component'
-
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
 
@@ -26,8 +23,7 @@ export class ErrorInterceptor implements HttpInterceptor {
      * @param authService 
      * @param notificationComponent 
      */
-    constructor(private authService: AuthenticationService,
-        private notificationComponent: NotificationComponent) { }
+    constructor(private authService: AuthenticationService) { }
 
     /**
      * Error interceptor handler
@@ -109,13 +105,13 @@ export class ErrorInterceptor implements HttpInterceptor {
      */
     private showMessage() {
         // Run the notification
-        this.notificationComponent.addToast({
+        /*this.notificationComponent.addToast({
             title: this.notificationSettings.codeStatus + ' - ' + this.notificationSettings.title,
             msg: `{Mensagem: ${this.notificationSettings.message}"}`,
             timeout: 10000,
             theme: 'bootstrap',
             position: 'top-right',
             type: this.notificationSettings.type
-        })
+        })*/
     }
 }

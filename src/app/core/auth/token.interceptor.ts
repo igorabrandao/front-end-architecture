@@ -4,7 +4,7 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/c
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // Import the auth service interface
-import { AuthGuard } from './auth.guard';
+import { AuthenticationService } from '../services/auth.service';
 
 @Injectable()
 export class HttpsRequestInterceptor implements HttpInterceptor {
@@ -12,9 +12,9 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
     /**
      * Class constructor
      * 
-     * @param authGuard
+     * @param authService
      */
-    constructor(private authGuard: AuthGuard) {}
+    constructor(private authService: AuthenticationService) { }
 
     /**
      * Interceptor component
@@ -25,7 +25,7 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const dupReq = req.clone({
             // Add the access token into the request header
-            headers: req.headers.set('Authorization', 'Bearer ' + this.authGuard.getToken)
+            headers: req.headers.set('Authorization', 'Bearer ' + this.authService.getToken)
         });
         return next.handle(dupReq);
     }

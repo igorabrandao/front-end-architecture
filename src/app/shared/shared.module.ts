@@ -15,61 +15,58 @@ import { ModalAnimationComponent } from './modal-animation/modal-animation.compo
 import { SpinnerComponent } from './spinner/spinner.component';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { DataFilterPipe } from './elements/data-filter.pipe';
-import { NotificationComponent } from './../theme/ui-elements/advance/notification/notification.component';
 import { ToastyModule } from 'ng2-toasty';
 
-
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
+    suppressScrollX: true
 };
 
 @NgModule({
-  imports: [
-    CommonModule,
-    NgbModule.forRoot(),
-    HttpClientModule,
-    PerfectScrollbarModule,
-    ClickOutsideModule,
-    ToastyModule.forRoot()
-  ],
-  exports: [
-    NgbModule,
-    ToggleFullScreenDirective,
-    AccordionAnchorDirective,
-    AccordionLinkDirective,
-    AccordionDirective,
-    CardToggleDirective,
-    HttpClientModule,
-    PerfectScrollbarModule,
-    TitleComponent,
-    CardComponent,
-    ModalBasicComponent,
-    ModalAnimationComponent,
-    SpinnerComponent,
-    ClickOutsideModule,
-    DataFilterPipe,
-    ToastyModule
-  ],
-  declarations: [
-    ToggleFullScreenDirective,
-    AccordionAnchorDirective,
-    AccordionLinkDirective,
-    AccordionDirective,
-    CardToggleDirective,
-    TitleComponent,
-    CardComponent,
-    ModalBasicComponent,
-    ModalAnimationComponent,
-    SpinnerComponent,
-    DataFilterPipe
-  ],
-  providers: [
-    {
-      provide: PERFECT_SCROLLBAR_CONFIG,
-      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-    },
-    NotificationComponent
-  ],
-  schemas: [NO_ERRORS_SCHEMA]
+    imports: [
+        CommonModule,
+        NgbModule.forRoot(),
+        HttpClientModule,
+        PerfectScrollbarModule,
+        ClickOutsideModule,
+        ToastyModule.forRoot()
+    ],
+    exports: [
+        NgbModule,
+        ToggleFullScreenDirective,
+        AccordionAnchorDirective,
+        AccordionLinkDirective,
+        AccordionDirective,
+        CardToggleDirective,
+        HttpClientModule,
+        PerfectScrollbarModule,
+        TitleComponent,
+        CardComponent,
+        ModalBasicComponent,
+        ModalAnimationComponent,
+        SpinnerComponent,
+        ClickOutsideModule,
+        DataFilterPipe,
+        ToastyModule
+    ],
+    declarations: [
+        ToggleFullScreenDirective,
+        AccordionAnchorDirective,
+        AccordionLinkDirective,
+        AccordionDirective,
+        CardToggleDirective,
+        TitleComponent,
+        CardComponent,
+        ModalBasicComponent,
+        ModalAnimationComponent,
+        SpinnerComponent,
+        DataFilterPipe
+    ],
+    providers: [
+        {
+            provide: PERFECT_SCROLLBAR_CONFIG,
+            useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+        }
+    ],
+    schemas: [NO_ERRORS_SCHEMA]
 })
 export class SharedModule { }

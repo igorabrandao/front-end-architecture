@@ -10,7 +10,7 @@ const routes: Routes = [
     {
         path: '',
         component: AdminComponent,
-        canActivate: [AuthGuard],
+        //canActivate: [AuthGuard],
         children: [
             {
                 path: '',
@@ -19,83 +19,83 @@ const routes: Routes = [
             },
             {
                 path: 'dashboard',
-                loadChildren: './theme/dashboard/dashboard.module#DashboardModule'
+                loadChildren: './pages/dashboard/dashboard.module#DashboardModule'
             },
             {
                 path: 'navigation',
-                loadChildren: './theme/navigation/navigation.module#NavigationModule'
+                loadChildren: './pages/navigation/navigation.module#NavigationModule'
             },
             {
                 path: 'widget',
-                loadChildren: './theme/widget/widget.module#WidgetModule'
+                loadChildren: './pages/widget/widget.module#WidgetModule'
             },
             {
                 path: 'basic',
-                loadChildren: './theme/ui-elements/basic/basic.module#BasicModule'
+                loadChildren: './pages/ui-elements/basic/basic.module#BasicModule'
             },
             {
                 path: 'advance',
-                loadChildren: './theme/ui-elements/advance/advance.module#AdvanceModule'
+                loadChildren: './pages/ui-elements/advance/advance.module#AdvanceModule'
             },
             {
                 path: 'animations',
-                loadChildren: './theme/ui-elements/animation/animation.module#AnimationModule'
+                loadChildren: './pages/ui-elements/animation/animation.module#AnimationModule'
             },
             {
                 path: 'forms',
-                loadChildren: './theme/forms/forms.module#FormsModule'
+                loadChildren: './pages/forms/forms.module#FormsModule'
             },
             {
                 path: 'bootstrap-table',
-                loadChildren: './theme/table/bootstrap-table/bootstrap-table.module#BootstrapTableModule'
+                loadChildren: './pages/table/bootstrap-table/bootstrap-table.module#BootstrapTableModule'
             },
             {
                 path: 'data-table',
-                loadChildren: './theme/table/data-table/data-table.module#DataTableModule'
+                loadChildren: './pages/table/data-table/data-table.module#DataTableModule'
             },
             {
                 path: 'user',
-                loadChildren: './theme/user/user.module#UserModule'
+                loadChildren: './pages/user/user.module#UserModule'
             },
             {
                 path: 'email',
-                loadChildren: './theme/email/email.module#EmailModule'
+                loadChildren: './pages/email/email.module#EmailModule'
             },
             {
                 path: 'crm-contact',
-                loadChildren: './theme/crm-contact/crm-contact.module#CrmContactModule'
+                loadChildren: './pages/crm-contact/crm-contact.module#CrmContactModule'
             },
             {
                 path: 'task',
-                loadChildren: './theme/task/task.module#TaskModule'
+                loadChildren: './pages/task/task.module#TaskModule'
             },
             {
                 path: 'editor',
-                loadChildren: './theme/extension/editor/editor.module#EditorModule'
+                loadChildren: './pages/extension/editor/editor.module#EditorModule'
             },
             {
                 path: 'invoice',
-                loadChildren: './theme/extension/invoice/invoice.module#InvoiceModule'
+                loadChildren: './pages/extension/invoice/invoice.module#InvoiceModule'
             },
             {
                 path: 'file-upload-ui',
-                loadChildren: './theme/extension/file-upload-ui/file-upload-ui.module#FileUploadUiModule'
+                loadChildren: './pages/extension/file-upload-ui/file-upload-ui.module#FileUploadUiModule'
             },
             {
                 path: 'calendar',
-                loadChildren: './theme/extension/event-calendar/event-calendar.module#EventCalendarModule'
+                loadChildren: './pages/extension/event-calendar/event-calendar.module#EventCalendarModule'
             },
             {
                 path: 'charts',
-                loadChildren: './theme/chart/chart.module#ChartModule'
+                loadChildren: './pages/chart/chart.module#ChartModule'
             },
             {
                 path: 'map',
-                loadChildren: './theme/map/map.module#MapModule'
+                loadChildren: './pages/map/map.module#MapModule'
             },
             {
                 path: 'simple-page',
-                loadChildren: './theme/simple-page/simple-page.module#SimplePageModule'
+                loadChildren: './pages/simple-page/simple-page.module#SimplePageModule'
             }
         ]
     },
@@ -105,23 +105,23 @@ const routes: Routes = [
         children: [
             {
                 path: 'auth',
-                loadChildren: './theme/auth/auth.module#AuthModule'
+                loadChildren: './pages/auth/auth.module#AuthModule'
             },
             {
                 path: 'maintenance/error',
-                loadChildren: './theme/maintenance/error/error.module#ErrorModule'
+                loadChildren: './pages/maintenance/error/error.module#ErrorModule'
             },
             {
                 path: 'maintenance/coming-soon',
-                loadChildren: './theme/maintenance/coming-soon/coming-soon.module#ComingSoonModule'
+                loadChildren: './pages/maintenance/coming-soon/coming-soon.module#ComingSoonModule'
             },
             {
                 path: 'email/email-template',
-                loadChildren: './theme/email/email-template/email-template.module#EmailTemplateModule'
+                loadChildren: './pages/email/email-template/email-template.module#EmailTemplateModule'
             },
             {
                 path: 'maintenance/offline-ui',
-                loadChildren: './theme/maintenance/offline-ui/offline-ui.module#OfflineUiModule'
+                loadChildren: './pages/maintenance/offline-ui/offline-ui.module#OfflineUiModule'
             }
         ]
     }

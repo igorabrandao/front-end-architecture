@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http';
 // Import the User model
 import { User } from '../models/user.model';
 
-// Import the config-related things
-import { AppSettings } from '../../app-config';
+// Import the app global settings
+import { AppSettings } from '../../app-settings';
 
 @Injectable()
 export class UserService {
