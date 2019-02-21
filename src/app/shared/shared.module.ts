@@ -15,6 +15,9 @@ import { ModalAnimationComponent } from './modal-animation/modal-animation.compo
 import { SpinnerComponent } from './spinner/spinner.component';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { DataFilterPipe } from './elements/data-filter.pipe';
+import { NotificationComponent } from './../theme/ui-elements/advance/notification/notification.component';
+import { ToastyModule } from 'ng2-toasty';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -26,7 +29,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NgbModule.forRoot(),
     HttpClientModule,
     PerfectScrollbarModule,
-    ClickOutsideModule
+    ClickOutsideModule,
+    ToastyModule.forRoot()
   ],
   exports: [
     NgbModule,
@@ -43,7 +47,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ModalAnimationComponent,
     SpinnerComponent,
     ClickOutsideModule,
-    DataFilterPipe
+    DataFilterPipe,
+    ToastyModule
   ],
   declarations: [
     ToggleFullScreenDirective,
@@ -62,7 +67,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-    }
+    },
+    NotificationComponent
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

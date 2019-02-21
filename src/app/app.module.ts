@@ -18,7 +18,7 @@ import { ErrorInterceptor } from './core/error/error.interceptor';
 import { fakeBackendProvider } from './core/helpers/fake-backend'; // fake backend
 import { AuthenticationService } from './core/services/auth.service';
 
-// Security handlers
+// Security routing handler
 import { AuthGuard } from './core/auth/auth.guard';
 
 // Entities services

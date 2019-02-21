@@ -1,5 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+
+// Import the notification component
+import { NotificationComponent } from '../../theme/ui-elements/advance/notification/notification.component';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -12,7 +15,8 @@ export class AuthGuard implements CanActivate {
      * 
      * @param router 
      */
-    constructor(private router: Router) { }
+    constructor(private router: Router, private notificationComponent: NotificationComponent,
+        private ngZone : NgZone) { }
 
     /**
      * Method to check if there is a logged user
@@ -21,9 +25,6 @@ export class AuthGuard implements CanActivate {
      * @param state 
      */
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-
-        console.log('oi');
-
         if (localStorage.getItem('currentUser')) {
             // logged in so return true
             return true;
@@ -31,6 +32,22 @@ export class AuthGuard implements CanActivate {
 
         // not logged in so redirect to login page with the return url
         this.router.navigate(['/auth/login/social'], { queryParams: { returnUrl: state.url } });
+
+        // Run the notification
+        this.ngZone.run(() => {
+            this.notificationComponent.addToast({
+                title: 'Acesso não autorizado',
+                msg: `Identificamos que você não possui permissão para acessar esta página. Por 
+                    gentileza, conecte-se a sua conta ou crie um novo usuário para acessar o sistema.`,
+                timeout: 10000,
+                theme: 'bootstrap',
+                position: 'top-right',
+                type: 'error'
+            });
+
+            console.log('chamei o toast! =D');
+        });
+
         return false;
     }
 

@@ -1,5 +1,5 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {ToastData, ToastOptions, ToastyService} from 'ng2-toasty';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ToastData, ToastOptions, ToastyService } from 'ng2-toasty';
 
 @Component({
   selector: 'app-notification',
@@ -20,7 +20,7 @@ export class NotificationComponent implements OnInit {
   theme = 'bootstrap';
   type = 'default';
   closeOther = false;
-  constructor(private toastyService: ToastyService) {}
+  constructor(private toastyService: ToastyService) { }
 
   ngOnInit() {
   }
@@ -38,9 +38,11 @@ export class NotificationComponent implements OnInit {
       theme: options.theme,
       onAdd: (toast: ToastData) => {
         /* added */
+        //console.log('Toast ' + toast.id + ' has been added!');
       },
       onRemove: (toast: ToastData) => {
         /* removed */
+        //console.log('Toast ' + toast.id + ' has been removed!');
       }
     };
 
@@ -53,5 +55,4 @@ export class NotificationComponent implements OnInit {
       case 'warning': this.toastyService.warning(toastOptions); break;
     }
   }
-
 }
