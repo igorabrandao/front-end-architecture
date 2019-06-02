@@ -44,3 +44,6 @@ phpunit.phar
 # Vs Code folder
 .vscode/*
 .svn
+
+# package-lock.json
+.package-lock.json

@@ -11,13 +11,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { MenuItems } from './shared/menu-items/menu-items';
 import { BreadcrumbsComponent } from './layout/admin/breadcrumbs/breadcrumbs.component';
+import { ErrorDialogComponent } from './core/error/errordialog.component';
+
 
 // APP settings
 import { AppSettings } from './app-settings';
 
 // API Handlers
-import { TokenInterceptor } from './core/auth/token.interceptor';
-import { ErrorInterceptor } from './core/error/error.interceptor';
+import { HttpsRequestInterceptor } from './core/auth/token.interceptor';
+import { ErrorDialogService } from './core/error/errordialog.service';
 import { AuthenticationService } from './core/services/auth.service';
 
 // Security routing handler
@@ -28,7 +30,8 @@ import { AuthGuard } from './core/auth/auth.guard';
     AppComponent,
     AdminComponent,
     AuthComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    ErrorDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -41,8 +44,8 @@ import { AuthGuard } from './core/auth/auth.guard';
     MenuItems,
     AuthGuard,
     AuthenticationService,
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    ErrorDialogService,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpsRequestInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
