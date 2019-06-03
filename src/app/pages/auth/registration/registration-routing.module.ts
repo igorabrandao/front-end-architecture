@@ -18,7 +18,7 @@ const routes: Routes = [
         loadChildren: './header-footer-reg/header-footer-reg.module#HeaderFooterRegModule'
       },
       {
-        path: 'social',
+        path: '',
         loadChildren: './social-reg/social-reg.module#SocialRegModule'
       },
       {
