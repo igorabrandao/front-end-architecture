@@ -32,23 +32,17 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
             // Add the access token into the request header
             headers: req.headers.set('Authorization', 'Bearer ' + this.authService.getToken)
         });
-        //return next.handle(dupReq);
 
         return next.handle(dupReq).pipe(
             map((event: HttpEvent<any>) => {
                 if (event instanceof HttpResponse) {
                     console.log('event--->>>', event);
-                    // this.errorDialogService.openDialog(event);
+                    //this.errorDialogService.handleError(event);
                 }
                 return event;
             }),
             catchError((error: HttpErrorResponse) => {
-                let data = {};
-                data = {
-                    reason: error && error.error.reason ? error.error.reason : '',
-                    status: error.status
-                };
-                this.errorDialogService.openDialog(data);
+                this.errorDialogService.handleError(error);
                 return throwError(error);
             }));
     }
